@@ -13,7 +13,7 @@ var INSPIRO = {},
   "use strict"
   // Predefined Global Variables
   var $window = $(window),
-    $theme_color = "#2250fc",
+    $theme_color = "#cb1a21",
     //Main
     $body = $("body"),
     $bodyInner = $(".body-inner"),
@@ -25,7 +25,7 @@ var INSPIRO = {},
     //Logo
     headerLogo = $("#logo"),
     //Menu
-    $mainMenu = $("#mainMenu"),    
+    $mainMenu = $("#mainMenu"),
     $mainMenuTriggerBtn = $("#mainMenu-trigger a, #mainMenu-trigger button"),
     //Slider
     $slider = $("#slider"),
@@ -106,7 +106,7 @@ var INSPIRO = {},
   });
 
 
-  
+
   INSPIRO.core = {
     functions: function () {
       INSPIRO.core.scrollTop()
@@ -508,7 +508,7 @@ var INSPIRO = {},
               $mainMenu.find(".hover-active").removeClass("hover-active");
             }
           }
-      }); 
+      });
 
 
         /*invert menu fix*/
@@ -832,7 +832,7 @@ var INSPIRO = {},
           }
 
           sliderHeight(elem);
-          
+
           var inspiroSliderData = elem.flickity({
             cellSelector: elem.options.cellSelector,
             prevNextButtons: elem.options.prevNextButtons,
@@ -1274,7 +1274,7 @@ var INSPIRO = {},
             elemWidth = elem.outerWidth();
 
           /* if(elemVisible !== "all") {
-            
+
           }else {
             if ($body.hasClass("b--desktop")) {
 
@@ -1791,7 +1791,7 @@ var INSPIRO = {},
             "line-height": elem.options.size + "px"
           })
           //Initializing jQuery easyPieChart plugin and passing the options
-          
+
           setTimeout(function() {
           new Waypoint({
             element: elem,
@@ -2177,7 +2177,7 @@ var INSPIRO = {},
                  if ($(this.content).find("video").length > 0) {
                   $(this.content).find("video").get(0).load();
                 }
-              }           
+              }
             },
             fixedContentPos: true,
             overflowY: "scroll"
@@ -2825,7 +2825,7 @@ var INSPIRO = {},
           jQuery.fn.spectragram.accessData = {
             accessToken: instagramAccessToken
           };
-          
+
           elem.find($(instagramItems)).spectragram({
             complete : myCallbackFunc(),
             max: instagramLimit,

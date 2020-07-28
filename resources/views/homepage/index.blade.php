@@ -43,12 +43,17 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="name">Nama Lengkap</label>
-                                        <input type="text" aria-required="true" name="widget-contact-form-name"
+                                        <input type="text" aria-required="true" name="name"
                                             class="form-control required name" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" aria-required="true" name="widget-contact-form-email"
+                                        <input type="email" aria-required="true" name="email"
+                                            class="form-control required email" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nohp">No HP</label>
+                                        <input type="nohp" aria-required="true" name="nohop"
                                             class="form-control required email" placeholder="">
                                     </div>
                                     <div class="form-group">

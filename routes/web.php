@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage.index');
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'DashboardController@loginshow')->name('login.show');
+    Route::post('/', 'DashboardController@loginproses')->name('login.proses');
 });

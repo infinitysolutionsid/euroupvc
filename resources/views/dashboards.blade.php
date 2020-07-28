@@ -43,18 +43,23 @@
                             SYS</span></a></div>
                 <ul>
                     <li class="label">Main</li>
-                    <li class="active"><a href="#"><i class="ti-home"></i> Dashboard </a>
+                    <li class="@yield('activedashboard')"><a href="/admin/dashboard"><i class="ti-home"></i> Dashboard
+                        </a>
                     </li>
 
                     <li class="label">Apps</li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-lock"></i> Credentials <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="/admin/user">User Managements</a></li>
+                            <li class="@yield('activeuser')"><a href="/admin/user">User Managements</a></li>
                         </ul>
                     </li>
-                    <li><a href="/admin/blog"><i class="ti-folder"></i> Project Blog </a></li>
-                    <li><a href="/admin/gallery"><i class="ti-layers"></i> Gallery </a></li>
+                    <li class="@yield('activeblog')"><a href="/admin/blog"><i class="ti-folder"></i> Project Blog </a>
+                    </li>
+                    <li class="@yield('activeproducts')"><a href="/admin/products"><i class="ti-bag"></i> Products </a>
+                    </li>
+                    <li class="@yield('activegallery')"><a href="/admin/gallery"><i class="ti-gallery"></i> Gallery </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -75,137 +80,6 @@
                     </div>
                     <div class="float-right">
                         <ul>
-                            {{-- <li class="header-icon dib"><i class="ti-bell"></i>
-                                <div class="drop-down">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">Recent Notifications</span>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">5 members joined today </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mariam</div>
-                                                        <div class="notification-text">likes a photo of you</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Tasnim</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="text-center">
-                                                <a href="#" class="more-link">See All</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="header-icon dib"><i class="ti-email"></i>
-                                <div class="drop-down">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">2 New Messages</span>
-                                        <a href="email.html"><i class="ti-pencil-alt pull-right"></i></a>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li class="notification-unread">
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/1.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Michael Qin</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="notification-unread">
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/2.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Michael Qin</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="{!!asset('dashboard/assets/images/avatar/2.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="text-center">
-                                                <a href="#" class="more-link">See All</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li> --}}
                             <li class="header-icon dib"><span class="user-avatar">{!!session()->get('name')!!} <i
                                         class="ti-angle-down f-s-10"></i></span>
                                 <div class="drop-down dropdown-profile">
@@ -251,6 +125,14 @@
                 </div>
             </div>
             @yield('contents')
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer">
+                        <?php $y = Date('Y') ?>
+                        <p>©{{$y}} CV. EURO UPVC - All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="search">

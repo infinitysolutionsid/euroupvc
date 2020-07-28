@@ -30,9 +30,25 @@ class DashboardController extends Controller
         // dd($request->all());
     }
 
-    // Content of Dashboard
+    // Content GET of Dashboard
     public function index()
     {
         return view('dashboard.index');
+    }
+    public function showuser()
+    {
+        return view('dashboard.user.show');
+    }
+    public function showblog()
+    {
+        return view('dashboard.blog.show');
+    }
+    public function showgallery()
+    {
+        return view('dashboard.gallery.show');
+    }
+    public function showproducts()
+    {
+        return view('dashboard.products.show');
     }
 }

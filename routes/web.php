@@ -28,4 +28,8 @@ Route::get('logout', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'isLogin'], function () {
     Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/blog', 'DashboardController@showblog');
+    Route::get('/user', 'DashboardController@showuser');
+    Route::get('/gallery', 'DashboardController@showgallery');
+    Route::get('/products', 'DashboardController@showproducts');
 });

@@ -37,6 +37,11 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/bs4/dt-1.10.21/b-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/r-2.2.5/datatables.min.css" />
 
+    {{-- tiny mce --}}
+    <script src="https://cdn.tiny.cloud/1/8ll77vzod9z7cah153mxwug6wu868fhxsr291kw3tqtbu9om/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+</head>
+
 </head>
 
 <body>
@@ -238,6 +243,15 @@
         }
         Pass.onchange = validatePassword;
         Confirm_pass.onkeyup = validatePassword;
+
+    </script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'advlist autolink lists link charmap print preview hr anchor pagebreak',
+            toolbar_mode: 'floating',
+            branding: false,
+        });
 
     </script>
 </body>

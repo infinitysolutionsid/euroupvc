@@ -90,13 +90,65 @@ class DashboardController extends Controller
     }
     // End User section
 
+    // BLOG SECTION
     public function showblog()
     {
-        return view('dashboard.blog.show');
+        $product = DB::table('productsdbs')
+            ->orderBy('productsdbs.product_name', 'ASC')
+            ->select('productsdbs.*')
+            ->get();
+        $blog = DB::table('blogdbs')
+            ->orderby('blogdbs.created_at', 'DESC')
+            ->select('blogdbs.*')
+            ->get();
+        return view('dashboard.blog.show', ['product' => $product, 'blog' => $blog]);
     }
+    public function prosesaddblog(Request $request)
+    {
+        $blog = new blogdb();
+        $blog->judul = $request->judul;
+        $blog->kategori_produk = $request->kategori_produk;
+        $blog->isi = $request->isi;
+        if (!$request->hasFile('coverimg')) {
+            $blog->save();
+        } else {
+            $lamp = $request->file('coverimg');
+            $filename = time() . '.' . $lamp->getClientOriginalExtension();
+            $request->file('coverimg')->move('media/blog/', $filename);
+            $blog->coverimg = $filename;
+            $blog->save();
+        }
+        return back()->with('selamat', 'Projek blog kamu sudah berhasil kamu tambahkan');
+    }
+    public function trashblog($id, Request $request)
+    {
+        $blog = blogdb::find($id);
+        // dd($user);
+        if ($blog) {
+            if ($blog->delete()) {
+                DB::statement('ALTER TABLE blogdbs AUTO_INCREMENT = ' . (count(blogdb::all()) + 1) . ';');
+
+                return back()->with('selamat', 'Data Blog berhasil dihapus.');
+            }
+        }
+    }
+    public function updateblog($id, Request $request)
+    {
+        $blog = blogdb::find($id);
+        $blog->judul = $request->judul;
+        $blog->isi = $request->isi;
+        $blog->save();
+
+        return back()->with('selamat', 'Berhasil update data blog');
+    }
+    // END BLOG SECTION
     public function showgallery()
     {
-        return view('dashboard.gallery.show');
+        $product = DB::table('productsdbs')
+            ->orderBy('productsdbs.product_name', 'ASC')
+            ->select('productsdbs.*')
+            ->get();
+        return view('dashboard.gallery.show', ['product' => $product]);
     }
 
     // PRODUCTS SECTION
@@ -138,4 +190,5 @@ class DashboardController extends Controller
 
         return back()->with('selamat', 'Data produk anda berhasil diupdate.');
     }
+    // PRODUCT END SECTION
 }

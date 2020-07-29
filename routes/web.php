@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.index');
-});
+Route::get('/', 'HomepageController@index');
+Route::get('/blog/{judul}', 'HomepageController@blogview');
 Route::get('/dash', function () {
     return view('dashboard');
 });
@@ -43,4 +42,14 @@ Route::group(['prefix' => 'admin/products', 'middleware' => 'isLogin'], function
     Route::post('/addnewproduct', 'DashboardController@prosesaddproduct');
     Route::get('/trash/{id}', 'DashboardController@trashproduct');
     Route::post('/update/{id}', 'DashboardController@updateproduct');
+});
+Route::group(['prefix' => 'admin/blog', 'middleware' => 'isLogin'], function () {
+    Route::post('/addnewblog', 'DashboardController@prosesaddblog');
+    Route::get('/trash/{id}', 'DashboardController@trashblog');
+    Route::post('/update/{id}', 'DashboardController@updateblog');
+});
+Route::group(['prefix' => 'admin/gallery', 'middleware' => 'isLogin'], function () {
+    Route::post('/addnewgallery', 'DashboardController@prosesaddgallery');
+    Route::get('/trash/{id}', 'DashboardController@trashgallery');
+    Route::post('/update/{id}', 'DashboardController@updategallery');
 });

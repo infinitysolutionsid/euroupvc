@@ -9,19 +9,20 @@
         content="Jual UPVC Medan dengan kualitas terbaik, dengan berbagai pilihan desain UPVC membuat rumah anda sangat nyaman dan indah. Ayo kunjungi sekarang!">
     <meta name="keywords"
         content="upvc murah medan, upvc terbaik di medan, upvc kualitas terbaik, euro upvc, euroupvc, upvc termurah, upvc terkuat">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{!!asset('images/favicon.ico')!!}" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>@yield('titlepage')</title>
-
-    <link href="css/plugins.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/media-query.css">
+    
+    <link href="{!!asset('css/plugins.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/style.css')!!}" rel="stylesheet">
+    <link rel="stylesheet" href="{!!asset('css/custom.css')!!}">
+    <link rel="stylesheet" href="{!!asset('css/media-query.css')!!}">
     <script src="https://kit.fontawesome.com/bf3b9c3659.js" crossorigin="anonymous"></script>
-    <link href="css/color-variations/green.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="{!!asset('css/color-variations/green.css')!!}" rel="stylesheet" type="text/css" media="screen">
 
-    <link rel="stylesheet" type="text/css" href="homepages/real-estate/css/real-estate-style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="homepages/real-estate/{!!asset('css/real-estate-style.css')!!}"
+        media="screen" />
 </head>
 
 <body>
@@ -57,9 +58,9 @@
                     <div id="logo">
                         <a href="/">
                             <span class="logo-default"><img class="img-fluid"
-                                    src="homepages/real-estate/images/logo.png" alt=""></span>
-                            <span class="logo-dark"><img class="img-fluid" src="homepages/real-estate/images/logo.png"
-                                    alt=""></span>
+                                    src="{!!asset('homepages/real-estate/images/logo.png')!!}" alt=""></span>
+                            <span class="logo-dark"><img class="img-fluid"
+                                    src="{!!asset('homepages/real-estate/images/logo.png')!!}" alt=""></span>
                         </a>
                     </div>
                     <div id="mainMenu-trigger">
@@ -180,10 +181,10 @@
 
     <a id="scrollTop" class="scroll-to" href="body"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="{!!asset('js/jquery.js')!!}"></script>
+    <script src="{!!asset('js/plugins.js')!!}"></script>
 
-    <script src="js/functions.js"></script>
+    <script src="{!!asset('js/functions.js')!!}"></script>
 </body>
 
 </html>

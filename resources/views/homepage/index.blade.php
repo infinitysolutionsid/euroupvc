@@ -345,77 +345,32 @@
     </div>
     <div id="blog">
         <div class="container">
-
             <div id="blog" class="grid-layout post-3-columns m-b-30" data-item="post-item">
-
+                @if(!$blog->isEmpty())
+                @foreach ($blog as $blog)
                 <div class="post-item border">
                     <div class="post-item-wrap">
                         <div class="post-image">
                             <a href="#">
-                                <img alt=""
-                                    src="https://www.euroupvc.co.id/wp-content/uploads/2020/07/photo_2020-07-11_14-38-07-755x521.jpg">
+                                <img alt="" src="{!!asset('media/blog/'.$blog->coverimg)!!}">
                             </a>
-                            <span class="post-meta-category"><a href="">Door</a></span>
+                            <span class="post-meta-category"><a href="">{{$blog->kategori_produk}}</a></span>
                         </div>
                         <div class="post-item-description">
-                            <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jul 27, 2020</span>
-                            <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33
-                                    Comments</a></span>
-                            <h2><a href="#">Standard post with a single image
+                            <span class="post-meta-date"><i
+                                    class="fa fa-calendar-o"></i>{{date('M d Y',strtotime($blog->created_at))}}</span>
+                            <h2><a href="/blog/{{$blog->judul}}">{{$blog->judul}}
                                 </a></h2>
-                            <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus
-                                commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.</p>
-                            <a href="#" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
+                            <p>{!!str_limit($blog->isi, 100)!!}</p>
+                            <a href="/blog/{{$blog->judul}}" class="item-link">Read More <i
+                                    class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-
-                <div class="post-item border">
-                    <div class="post-item-wrap">
-                        <div class="post-image">
-                            <a href="#">
-                                <img alt=""
-                                    src="https://www.euroupvc.co.id/wp-content/uploads/2020/07/photo_2020-07-11_14-38-07-755x521.jpg">
-                            </a>
-                            <span class="post-meta-category"><a href="">Window</a></span>
-                        </div>
-                        <div class="post-item-description">
-                            <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jul 27, 2020</span>
-                            <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33
-                                    Comments</a></span>
-                            <h2><a href="#">Standard post with a single image
-                                </a></h2>
-                            <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus
-                                commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.</p>
-                            <a href="#" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="post-item border">
-                    <div class="post-item-wrap">
-                        <div class="post-image">
-                            <a href="#">
-                                <img alt=""
-                                    src="https://www.euroupvc.co.id/wp-content/uploads/2020/07/photo_2020-07-11_14-38-07-755x521.jpg">
-                            </a>
-                            <span class="post-meta-category"><a href="">Partition</a></span>
-                        </div>
-                        <div class="post-item-description">
-                            <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jul 27, 2020</span>
-                            <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33
-                                    Comments</a></span>
-                            <h2><a href="#">Standard post with a single image
-                                </a></h2>
-                            <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus
-                                commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.</p>
-                            <a href="#" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
+                @else
+                <h5>No data founded</h5>
+                @endif
             </div>
         </div>
     </div>

@@ -5362,3 +5362,9 @@ only screen and (min-resolution: 2dppx) {
         display: inline-block !important;
     }
 }
+
+.card-img-top {
+    width: 400px !important;
+    height: 150px !important;
+    object-fit: cover;
+}

@@ -15,7 +15,7 @@
     </div>
     @endif
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-title">
                     <div class="row">
@@ -175,6 +175,20 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-title">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            Kategori
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <h2>On Development</h2>
                 </div>
             </div>
         </div>

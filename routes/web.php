@@ -39,3 +39,8 @@ Route::group(['prefix' => 'admin/user', 'middleware' => 'isLogin'], function () 
     Route::get('/trash/{id}', 'DashboardController@trashuser');
     Route::post('/update/{id}', 'DashboardController@updateuser');
 });
+Route::group(['prefix' => 'admin/products', 'middleware' => 'isLogin'], function () {
+    Route::post('/addnewproduct', 'DashboardController@prosesaddproduct');
+    Route::get('/trash/{id}', 'DashboardController@trashproduct');
+    Route::post('/update/{id}', 'DashboardController@updateproduct');
+});

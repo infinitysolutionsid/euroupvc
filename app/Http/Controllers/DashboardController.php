@@ -88,6 +88,8 @@ class DashboardController extends Controller
 
         return back()->with('selamat', 'Data user berhasil diupdate');
     }
+    // End User section
+
     public function showblog()
     {
         return view('dashboard.blog.show');
@@ -96,8 +98,44 @@ class DashboardController extends Controller
     {
         return view('dashboard.gallery.show');
     }
+
+    // PRODUCTS SECTION
     public function showproducts()
     {
-        return view('dashboard.products.show');
+        $products = DB::table('productsdbs')
+            ->orderBy('productsdbs.product_name', 'ASC')
+            ->select('productsdbs.*')
+            ->get();
+        return view('dashboard.products.show', ['products' => $products]);
+    }
+    public function prosesaddproduct(Request $request)
+    {
+        $product = new productsdb();
+        $product->product_name = $request->product_name;
+        $product->description = $request->description;
+        $product->save();
+
+        return back()->with('selamat', 'Berhasil menambahkan data produk baru anda.');
+    }
+    public function trashproduct($id)
+    {
+        $product = productsdb::find($id);
+        // dd($user);
+        if ($product) {
+            if ($product->delete()) {
+                DB::statement('ALTER TABLE productsdbs AUTO_INCREMENT = ' . (count(productsdb::all()) + 1) . ';');
+
+                return back()->with('selamat', 'Data Produk berhasil dihapus.');
+            }
+        }
+    }
+    public function updateproduct($id, Request $request)
+    {
+        $product = productsdb::find($id);
+        $product->product_name = $request->product_name;
+        $product->description = $request->description;
+        $product->save();
+
+        return back()->with('selamat', 'Data produk anda berhasil diupdate.');
     }
 }

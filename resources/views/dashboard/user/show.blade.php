@@ -101,7 +101,7 @@
                         <table id="tablehover" class="table table-hover display">
                             <thead>
                                 <tr>
-                                    {{-- <th>#</th> --}}
+                                    <th>#</th>
                                     <th>Name</th>
                                     <th>Status</th>
                                     <th>Role</th>
@@ -109,9 +109,11 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if(!$getuser->isEmpty())
+                                <?php $no = 1; ?>
                                 @foreach ($getuser as $getuser)
                                 <tr>
-                                    {{-- <th scope="row">1</th> --}}
+                                    <th scope="row">{{$no++}}</th>
                                     <td>{!!$getuser->name!!}</td>
                                     <td>@if($getuser->status == 'active') <span style="color:green;"><i
                                                 class="fas fa-check-circle"></i></span>
@@ -134,7 +136,6 @@
                                         </a>
                                     </td>
                                 </tr>
-
                                 {{-- modal edit user --}}
                                 <!-- Modal -->
                                 <div class="modal fade" id="edituser{{$getuser->id}}" tabindex="-1" role="dialog"
@@ -251,6 +252,11 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                @else
+                                <tr>
+                                    <td colspan="5" class="text-center">No Data Founded!</td>
+                                </tr>
+                                @endif
                             </tbody>
                         </table>
                     </div>

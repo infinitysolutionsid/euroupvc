@@ -83,6 +83,8 @@
                     </div>
                     <div class="float-right">
                         <ul>
+                            <li class="header-icon dib"><a href="/" target="_blank"><i class="ti-world f-s-15"></i></a>
+                            </li>
                             <li class="header-icon dib"><span class="user-avatar">{!!session()->get('name')!!} <i
                                         class="ti-angle-down f-s-10"></i></span>
                                 <div class="drop-down dropdown-profile">

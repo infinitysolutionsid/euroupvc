@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <div class="limiter">
         <div class="container-login100" style="background-image: url('auth/images/img-01.jpg');">
             <div class="wrap-login100">
@@ -27,10 +26,17 @@
                     <div class="login100-form-avatar">
                         <img src="auth/images/avatar-01.png" alt="Euro UPVC Logo">
                     </div>
-                    <span class="login100-form-title p-t-20 p-b-45">
+                    <span class="login100-form-title p-t-20 p-b-20">
                         Welcome to system!
                     </span>
-
+                    @if(session('gagal'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <p>{{session('gagal')}}</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
                     <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required">
                         <input class="input100" type="text" name="username" placeholder="Username">
                         <span class="focus-input100"></span>
@@ -40,7 +46,10 @@
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
-                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password" required
+                            pattern=".{8,}"
+                            oninvalid="setCustomValidity('Minimal character password adalah 8 abjad/angka. ')"
+                            onchange="try{setCustomValidity('')}catch(e){}">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock"></i>
@@ -51,6 +60,7 @@
                         <button type="submit" class="login100-form-btn">
                             Login
                         </button>
+                        <span style="color: #fff !important;"><a href="/">Back to home</a></span>
                     </div>
                 </form>
             </div>

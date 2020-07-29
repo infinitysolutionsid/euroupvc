@@ -31,6 +31,12 @@
 
     <link href="{!!asset('dashboard/assets/css/lib/helper.css')!!}" rel="stylesheet">
     <link href="{!!asset('dashboard/assets/css/style.css')!!}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bf3b9c3659.js" crossorigin="anonymous"></script>
+
+    {{-- Datatables --}}
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.21/b-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/r-2.2.5/datatables.min.css" />
+
 </head>
 
 <body>
@@ -48,10 +54,10 @@
                     </li>
 
                     <li class="label">Apps</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-lock"></i> Credentials <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li class="@yield('activeuser')"><a class="sidebar-sub-toggle"><i class="ti-lock"></i> Credentials
+                            <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li class="@yield('activeuser')"><a href="/admin/user">User Managements</a></li>
+                            <li><a href="/admin/user">User Managements</a></li>
                         </ul>
                     </li>
                     <li class="@yield('activeblog')"><a href="/admin/blog"><i class="ti-folder"></i> Project Blog </a>
@@ -64,9 +70,6 @@
             </div>
         </div>
     </div>
-    <!-- /# sidebar -->
-
-
     <div class="header">
         <div class="container-fluid">
             <div class="row">
@@ -208,6 +211,33 @@
     <script src="{!!asset('dashboard/assets/js/scripts.js')!!}"></script>
     <!-- scripit init-->
 
+    {{-- Datatables --}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/dt-1.10.21/b-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/r-2.2.5/datatables.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#tablehover').DataTable();
+        });
+
+    </script>
+    <script>
+        var Pass = document.getElementById('password');
+        var Confirm_pass = document.getElementById('verpassword')
+
+        function validatePassword() {
+            if (Pass.value != Confirm_pass.value) {
+                Confirm_pass.setCustomValidity("Password tidak sama. Ulangi kembali password kamu.");
+            } else {
+                Confirm_pass.setCustomValidity("");
+            }
+        }
+        Pass.onchange = validatePassword;
+        Confirm_pass.onkeyup = validatePassword;
+
+    </script>
 </body>
 
 </html>

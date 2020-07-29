@@ -23,7 +23,7 @@ Route::prefix('admin')->group(function () {
 });
 Route::get('logout', function () {
     session()->flush();
-    return redirect('/');
+    return redirect('/admin/dashboard');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'isLogin'], function () {
@@ -32,4 +32,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'isLogin'], function () {
     Route::get('/user', 'DashboardController@showuser');
     Route::get('/gallery', 'DashboardController@showgallery');
     Route::get('/products', 'DashboardController@showproducts');
+});
+
+Route::group(['prefix' => 'admin/user', 'middleware' => 'isLogin'], function () {
+    Route::post('/addnewuser', 'DashboardController@prosesaaddnew');
+    Route::get('/trash/{id}', 'DashboardController@trashuser');
+    Route::post('/update/{id}', 'DashboardController@updateuser');
 });

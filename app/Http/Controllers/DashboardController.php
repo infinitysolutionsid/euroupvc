@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
+use App\admindb;
+use App\blogdb;
+use App\gallerydb;
+use App\productsdb;
+
 class DashboardController extends Controller
 {
     public function loginshow()
@@ -27,6 +32,7 @@ class DashboardController extends Controller
 
             return redirect('/admin/dashboard');
         }
+        return back()->with('gagal', 'Coba periksa kembali otoritas keanggotaanmu atau pertanyakan kepada kepala admin.');
         // dd($request->all());
     }
 
@@ -35,9 +41,52 @@ class DashboardController extends Controller
     {
         return view('dashboard.index');
     }
+    // User Section
     public function showuser()
     {
-        return view('dashboard.user.show');
+        $getuser = DB::table('admindbs')
+            ->orderBy('admindbs.name', 'ASC')
+            ->select('admindbs.*')
+            ->get();
+        return view('dashboard.user.show', ['getuser' => $getuser]);
+    }
+    public function prosesaaddnew(Request $request)
+    {
+        $user = new admindb();
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->password = HASH::make($request->password);
+        $user->unpassword = $request->verpassword;
+        $user->role = $request->role;
+        $user->status = 'active';
+        $user->birthdate = '-';
+        $user->save();
+
+        return back()->with('selamat', 'Data user berhasil kamu tambahkan. Dan sudah bisa digunakan.');
+    }
+    public function trashuser($id, Request $request)
+    {
+        $user = admindb::find($id);
+        // dd($user);
+        if ($user) {
+            if ($user->delete()) {
+                DB::statement('ALTER TABLE admindbs AUTO_INCREMENT = ' . (count(admindb::all()) + 1) . ';');
+
+                return back()->with('selamat', 'Data user berhasil dihapus.');
+            }
+        }
+    }
+    public function updateuser($id, Request $request)
+    {
+        $user = admindb::find($id);
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->password = HASH::make($request->password);
+        $user->unpassword = $request->verpassword;
+        $user->role = $request->role;
+        $user->save();
+
+        return back()->with('selamat', 'Data user berhasil diupdate');
     }
     public function showblog()
     {

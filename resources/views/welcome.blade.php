@@ -83,7 +83,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="#">Career</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="/contact-us">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>

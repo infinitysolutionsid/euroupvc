@@ -13,7 +13,7 @@ ini.')
                 <ul>
                     <li><a href="#">Home</a>
                     </li>
-                    <li class="active"><a href="/">Projects</a>
+                    <li class="active"><a href="/projects">Projects</a>
                     </li>
                 </ul>
             </div>

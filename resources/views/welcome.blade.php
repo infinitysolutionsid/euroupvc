@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="top-menu">
-                            <li><a href="#">About us</a></li>
+                            <li><a href="/about-us">About us</a></li>
                             <li><a href="#">Features</a></li>
                             <li><a href="#">Pricing</a></li>
                             <li><a href="#">Terms</a></li>
@@ -131,25 +131,33 @@
                         </div>
                     </div>
                     <div class="col-lg-5 offset-1">
-                        <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form"
-                            method="post">
+                        <form class="" action="/kirim-pesan" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Name</label>
-                                    <input type="text" aria-required="true" required name="widget-contact-form-name"
+                                    <input type="text" aria-required="true" required name="name"
                                         class="form-control required name" placeholder="Enter your Name">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="email">Email</label>
-                                    <input type="email" aria-required="true" required name="widget-contact-form-email"
+                                    <input type="email" aria-required="true" required name="email"
                                         class="form-control required email" placeholder="Enter your Email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="nohp">No HP</label>
+                                    <input type="tel" aria-required="true" required name="nohp"
+                                        class="form-control required" placeholder="Enter your phone number">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea type="text" required name="widget-contact-form-message" rows="8"
-                                    class="form-control required" placeholder="Enter your Message"></textarea>
+                                <textarea type="text" required name="message" rows="8" class="form-control required"
+                                    placeholder="Enter your Message"></textarea>
                             </div>
+                            <input type="hidden" name="type" value="Pesan">
                             <div class="form-group">
                                 <button class="btn btn-light" type="submit" id="form-submit"><i
                                         class="fa fa-paper-plane"></i>&nbsp;Send message</button>
@@ -184,6 +192,10 @@
     <script src="{!!asset('js/plugins.js')!!}"></script>
 
     <script src="{!!asset('js/functions.js')!!}"></script>
+    <script type='text/javascript' src='//maps.googleapis.com/maps/api/js?key=AIzaSyALboiQYa5WEjbINupUsZ1r0C1u7llRyS8'>
+    </script>
+    <script type="text/javascript" src="{!!asset('plugins/gmap3/gmap3.min.js')!!}"></script>
+    <script type="text/javascript" src="{!!asset('plugins/gmap3/map-styles.js')!!}"></script>
 </body>
 
 </html>

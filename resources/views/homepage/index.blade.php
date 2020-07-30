@@ -30,6 +30,17 @@ sangat nyaman dan indah. Ayo kunjungi sekarang!')
 </div>
 <div class="background-grey">
     <div class="container p-t-60 p-b-60">
+        @if(session('great'))
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div role="alert" class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span> </button>
+                    <strong><i class="fa fa-check-circle"></i> Success!</strong> {{session('great')}}
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="row">
             <div class="col-lg-7">
                 <h2 class="text-medium">Butuh saran untuk bagian UPVC dalam rumahmu?</h2>
@@ -39,8 +50,9 @@ sangat nyaman dan indah. Ayo kunjungi sekarang!')
                 <div class="real-estate-form">
                     <div class="text-dark p-40 background-white">
                         <h3 class="m-b-20">Isi Form</h3>
-                        <form id="widget-contact-form-agent" class="form-gray-fields" action="#" role="form"
+                        <form id="widget-contact-form-agent" class="form-gray-fields" action="/kirim-pesan" role="form"
                             method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -55,9 +67,12 @@ sangat nyaman dan indah. Ayo kunjungi sekarang!')
                                     </div>
                                     <div class="form-group">
                                         <label for="nohp">No HP</label>
-                                        <input type="nohp" aria-required="true" name="nohop"
+                                        <input type="nohp" aria-required="true" name="nohp"
                                             class="form-control required email" placeholder="">
                                     </div>
+                                    <input type="hidden" name="type" value="Request Penawaran">
+                                    <input type="hidden" name="message"
+                                        value="Hallo admin EURO UPVC, saya ingin meminta penawaran harga dan produk UPVC.">
                                     <div class="form-group">
                                         <button class="btn button border black rounded" type="submit"
                                             id="form-submit">Dapatkan penawaran!</button>
@@ -219,15 +234,15 @@ sangat nyaman dan indah. Ayo kunjungi sekarang!')
             </div>
         </div>
         <div class="row justify-content-center text-center">
-            <div class="col-lg-4">
+            <div class="col-lg-4 p-t-20 p-b-20">
                 <img src="images/product/window.png" alt="">
                 <h4>Window System</h4>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 p-t-20 p-b-20">
                 <img src="images/product/door.png" alt="">
                 <h4>Door System</h4>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 p-t-20 p-b-20">
                 <img src="images/product/sliding-door.png" alt="">
                 <h4>Sliding Door System</h4>
             </div>

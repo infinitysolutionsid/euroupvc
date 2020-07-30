@@ -88,6 +88,8 @@
                     </div>
                     <div class="float-right">
                         <ul>
+                            <li class="header-icon dib"><a href="/admin/emails"><i class="ti-email f-s-15"></i></a>
+                            </li>
                             <li class="header-icon dib"><a href="/" target="_blank"><i class="ti-world f-s-15"></i></a>
                             </li>
                             <li class="header-icon dib"><span class="user-avatar">{!!session()->get('name')!!} <i

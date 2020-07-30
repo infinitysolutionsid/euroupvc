@@ -14,6 +14,16 @@
 Route::get('/', 'HomepageController@index');
 Route::get('/blog/{judul}', 'HomepageController@blogview');
 Route::get('/projects', 'HomepageController@projectsview');
+Route::post('/kirim-pesan', 'DashboardController@kirimpesan');
+Route::get('/contact-us', function () {
+    return view('homepage.contact');
+});
+Route::get('/pesan', function () {
+    return view('receivedemails');
+});
+Route::get('/about-us', function () {
+    return view('homepage.aboutus');
+});
 Route::get('/dash', function () {
     return view('dashboard');
 });
@@ -32,6 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'isLogin'], function () {
     Route::get('/user', 'DashboardController@showuser');
     Route::get('/gallery', 'DashboardController@showgallery');
     Route::get('/products', 'DashboardController@showproducts');
+    Route::get('/emails', 'DashboardController@showemails');
 });
 
 Route::group(['prefix' => 'admin/user', 'middleware' => 'isLogin'], function () {

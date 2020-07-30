@@ -21182,3 +21182,8 @@ body[data-bg-image] {
     height: 230px !important;
     object-fit: cover;
 }
+
+.imgmessages {
+    width: 150px;
+    height: auto;
+}

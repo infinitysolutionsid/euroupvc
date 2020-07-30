@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\admindb;
 use App\blogdb;
+use App\email;
 use App\gallerydb;
 use App\productsdb;
 
@@ -230,4 +231,27 @@ class DashboardController extends Controller
         return back()->with('selamat', 'Data produk anda berhasil diupdate.');
     }
     // PRODUCT END SECTION
+
+    // EMAILS SECTION
+    public function showemails()
+    {
+        return view('dashboard.emails.show');
+    }
+
+    // Email kirim
+    public function kirimpesan(Request $request)
+    {
+        // dd($request->all());
+        $name = $request->name;
+        $email = new email();
+        $email->name = $request->name;
+        $email->email = $request->email;
+        $email->nohp = $request->nohp;
+        $email->message = $request->message;
+        $email->type = $request->type;
+        // dd($email);
+        $email->save();
+        // return back()->with('great', 'Halo ' . $name . ', kami telah menerima pesan kamu. Biasanya kami membalas dalam waktu 3x24 jam, dan kami akan segera membalas ke email anda maupun melalui nomor telepon yang sudah kamu input. Terima kasih ya.');
+        return view('receivedemails', ['name' => $name]);
+    }
 }

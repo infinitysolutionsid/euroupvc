@@ -21177,3 +21177,8 @@ body[data-bg-image] {
     transform: translateY(-3px);
     border: 1px solid #EBEDEF;
 }
+
+.portfolio-image {
+    height: 230px !important;
+    object-fit: cover;
+}

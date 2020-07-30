@@ -1,15 +1,18 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - '.$blog->judul)
+@section('deschomepage','Semua proyek yang pernah dikerjakan oleh CV. EURO UPVC dikumpulkan didalam arsip website ini.
+Yuk intip projek '.$blog->judul.'.')
 @section('content')
 <section id="page-content" class="sidebar-right">
     <div class="container">
-        <div class="row">
-            <div class="content col-lg-9">
+        <div class="row justify-content-center">
+            <div class="content col-lg-8">
                 <div id="blog" class="single-post">
                     <div class="post-item">
                         <div class="post-item-wrap">
                             <div class="post-image">
-                                <img alt="" src="{!!asset('media/blog/'.$blog->coverimg)!!}">
+                                <img alt="Blog EURO UPVC{{$blog->judul}}"
+                                    src="{!!asset('media/blog/'.$blog->coverimg)!!}">
                             </div>
                             <div class="post-item-description">
                                 <h2>{{$blog->judul}}</h2>
@@ -190,7 +193,7 @@
             </div>
 
 
-            <div class="sidebar sticky-sidebar col-lg-3">
+            <div class="sidebar sticky-sidebar col-lg-4">
                 <div class="widget">
                     <div class="tabs">
                         <ul class="nav nav-tabs" id="tabs-posts" role="tablist">
@@ -205,9 +208,10 @@
                                 <div class="post-thumbnail-list">
                                     @foreach ($blogcollection as $blogcollection)
                                     <div class="post-thumbnail-entry">
-                                        <img alt="" src="{!!asset('media/blog/'.$blogcollection->coverimg)!!}">
+                                        <img alt="Blog EURO UPVC{{$blogcollection->judul}}"
+                                            src="{!!asset('media/blog/'.$blogcollection->coverimg)!!}">
                                         <div class="post-thumbnail-content">
-                                            <a href="#">{{$blogcollection->judul}}</a>
+                                            <a href="/blog/{{$blogcollection->judul}}">{{$blogcollection->judul}}</a>
                                             <span class="post-date"><i class="icon-clock"></i>
                                                 {{Carbon\Carbon::parse($blogcollection->created_at)->diffForHumans()}}</span>
                                             <span class="post-category"><i class="fa fa-tag"></i>

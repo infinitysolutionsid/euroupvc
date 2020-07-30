@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="Bintang Tobing" />
-    <meta name="description"
-        content="Jual UPVC Medan dengan kualitas terbaik, dengan berbagai pilihan desain UPVC membuat rumah anda sangat nyaman dan indah. Ayo kunjungi sekarang!">
+    <meta name="description" content="@yield('deschomepage')">
     <meta name="keywords"
         content="upvc murah medan, upvc terbaik di medan, upvc kualitas terbaik, euro upvc, euroupvc, upvc termurah, upvc terkuat">
     <link rel="shortcut icon" href="{!!asset('images/favicon.ico')!!}" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>@yield('titlepage')</title>
-    
+
     <link href="{!!asset('css/plugins.css')!!}" rel="stylesheet">
     <link href="{!!asset('css/style.css')!!}" rel="stylesheet">
     <link rel="stylesheet" href="{!!asset('css/custom.css')!!}">
@@ -72,7 +71,7 @@
                             <nav>
                                 <ul>
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="#projects">Projects</a></li>
+                                    <li><a href="/projects">Projects</a></li>
                                     <li class="dropdown"> <a href="#">Product</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Door</a>

@@ -142,15 +142,54 @@ class DashboardController extends Controller
         return back()->with('selamat', 'Berhasil update data blog');
     }
     // END BLOG SECTION
+
+    // GALLERY SECTION
     public function showgallery()
     {
         $product = DB::table('productsdbs')
             ->orderBy('productsdbs.product_name', 'ASC')
             ->select('productsdbs.*')
             ->get();
-        return view('dashboard.gallery.show', ['product' => $product]);
+        $gal = DB::table('gallerydbs')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->select('gallerydbs.*')
+            ->get();
+        $galp = DB::table('gallerydbs')
+            ->join('productsdbs', 'gallerydbs.product_id', '=', 'productsdbs.id')
+            ->select('gallerydbs.*', 'productsdbs.*')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->get();
+        return view('dashboard.gallery.show', ['product' => $product, 'gal' => $gal, 'galp' => $galp]);
+        // dd($galp);
     }
+    public function prosesaddgallery(Request $request)
+    {
+        $gal = new gallerydb();
+        $gal->judul_foto = $request->judul_foto;
+        $gal->product_id = $request->product_id;
+        if (!$request->hasFile('img')) {
+            $gal->save();
+        } else {
+            $lamp = $request->file('img');
+            $filename = time() . '.' . $lamp->getClientOriginalExtension();
+            $request->file('img')->move('media/gallery/', $filename);
+            $gal->img = $filename;
+            $gal->save();
+        }
+        return back()->with('selamat', 'Foto kamu berhasil ditambahkan didalam galeri!');
+    }
+    public function trashgallery($id)
+    {
+        $gal = gallerydb::find($id);
+        // dd($user);
+        if ($gal) {
+            if ($gal->delete()) {
+                DB::statement('ALTER TABLE gallerydbs AUTO_INCREMENT = ' . (count(gallerydb::all()) + 1) . ';');
 
+                return back()->with('selamat', 'Data foto dalam galeri ini berhasil dihapus.');
+            }
+        }
+    }
     // PRODUCTS SECTION
     public function showproducts()
     {

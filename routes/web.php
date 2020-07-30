@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomepageController@index');
 Route::get('/blog/{judul}', 'HomepageController@blogview');
+Route::get('/projects', 'HomepageController@projectsview');
 Route::get('/dash', function () {
     return view('dashboard');
 });
@@ -51,5 +52,4 @@ Route::group(['prefix' => 'admin/blog', 'middleware' => 'isLogin'], function () 
 Route::group(['prefix' => 'admin/gallery', 'middleware' => 'isLogin'], function () {
     Route::post('/addnewgallery', 'DashboardController@prosesaddgallery');
     Route::get('/trash/{id}', 'DashboardController@trashgallery');
-    Route::post('/update/{id}', 'DashboardController@updategallery');
 });

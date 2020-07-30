@@ -5368,3 +5368,9 @@ only screen and (min-resolution: 2dppx) {
     height: 150px !important;
     object-fit: cover;
 }
+
+.table-hover td img {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+}

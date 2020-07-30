@@ -1,5 +1,7 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - Your trusted & Best UPVC Quality Product')
+@section('deschomepage'.'Jual UPVC Medan dengan kualitas terbaik, dengan berbagai pilihan desain UPVC membuat rumah anda
+sangat nyaman dan indah. Ayo kunjungi sekarang!')
 @section('content')
 <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360" data-autoplay="3200" data-animate-in="fadeIn"
     data-animate-out="fadeOut" data-items="1" data-loop="true" data-autoplay="true">
@@ -243,96 +245,24 @@
     </div>
 
     <div id="portfolio" class="grid-layout portfolio-4-columns" data-margin="0" data-lightbox="gallery">
-
-        <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-marketing ct-webdesign">
-            <div class="portfolio-item-wrap">
-                <div class="portfolio-image">
-                    <a href="#"><img src="homepages/real-estate/images/gallery/1.jpg" alt=""></a>
-                </div>
-                <div class="portfolio-description">
-                    <a title="Projek Di Jalan Bilal" data-lightbox="gallery-image"
-                        href="homepages/real-estate/images/gallery/1.jpg" class="btn btn-light btn-rounded">Zoom</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="portfolio-item img-zoom ct-marketing ct-media ct-branding ct-marketing ct-webdesign">
-            <div class="portfolio-item-wrap">
-                <div class="portfolio-image">
-                    <a href="#"><img src="homepages/real-estate/images/gallery/2.jpg" alt=""></a>
-                </div>
-                <div class="portfolio-description">
-                    <a title="Projek Bhayangkara" data-lightbox="gallery-image"
-                        href="homepages/real-estate/images/gallery/2.jpg" class="btn btn-light btn-rounded">Zoom</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
-            <div class="portfolio-item-wrap">
-                <div class="portfolio-image">
-                    <a href="#"><img src="homepages/real-estate/images/gallery/3.jpg" alt=""></a>
-                </div>
-                <div class="portfolio-description">
-                    <a title="Projek Gubernur Lantai 2" data-lightbox="gallery-image"
-                        href="homepages/real-estate/images/gallery/3.jpg" class="btn btn-light btn-rounded">Zoom</a>
-                </div>
-            </div>
-        </div>
-
-
+        @if(!$galp->isEmpty())
+        @foreach ($galp as $galp)
         <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media ct-marketing ct-webdesign">
             <div class="portfolio-item-wrap">
                 <div class="portfolio-image">
-                    <a href="#"><img src="homepages/real-estate/images/gallery/4.jpg" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="{!!asset('media/gallery/'.$galp->img)!!}"
+                            alt="Gallery EURO UPVC{{$galp->judul_foto}}"></a>
                 </div>
                 <div class="portfolio-description">
-                    <a title="Projek Rumah Walikota" data-lightbox="gallery-image"
-                        href="homepages/real-estate/images/gallery/4.jpg" class="btn btn-light btn-rounded">Zoom</a>
+                    <a title="{{$galp->judul_foto}} - {{$galp->img}}" data-lightbox="gallery-image"
+                        href="{!!asset('media/gallery/'.$galp->img)!!}" class="btn btn-light btn-rounded">Zoom</a>
                 </div>
             </div>
         </div>
-
-
-        <div class="portfolio-item img-zoom ct-marketing ct-media ct-branding ct-marketing ct-webdesign">
-            <div class="portfolio-item-wrap">
-                <div class="portfolio-image">
-                    <a href="#"><img src="homepages/real-estate/images/gallery/5.jpg" alt=""></a>
-                </div>
-                <div class="portfolio-description">
-                    <a title="Projek Rumah Warga" data-lightbox="gallery-image"
-                        href="homepages/real-estate/images/gallery/5.jpg" class="btn btn-light btn-rounded">Zoom</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-marketing ct-webdesign">
-            <div class="portfolio-item-wrap">
-                <div class="portfolio-image">
-                    <a href="#"><img src="homepages/real-estate/images/gallery/6.png" alt=""></a>
-                </div>
-                <div class="portfolio-description">
-                    <a title="Projek KFC" data-lightbox="gallery-image"
-                        href="homepages/real-estate/images/gallery/6.png" class="btn btn-light btn-rounded">Zoom</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
-            <div class="portfolio-item-wrap">
-                <div class="portfolio-image">
-                    <a href="#"><img src="homepages/real-estate/images/gallery/7.jpg" alt=""></a>
-                </div>
-                <div class="portfolio-description">
-                    <a title="Projek Starbucks" data-lightbox="gallery-image"
-                        href="homepages/real-estate/images/gallery/7.jpg" class="btn btn-light btn-rounded">Zoom</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
+        @else
+        <h4>No data founded</h4>
+        @endif
     </div>
 
 </section>
@@ -352,7 +282,8 @@
                     <div class="post-item-wrap">
                         <div class="post-image">
                             <a href="#">
-                                <img alt="" src="{!!asset('media/blog/'.$blog->coverimg)!!}">
+                                <img alt="Blog EURO UPVC{{$blog->judul}}"
+                                    src="{!!asset('media/blog/'.$blog->coverimg)!!}">
                             </a>
                             <span class="post-meta-category"><a href="">{{$blog->kategori_produk}}</a></span>
                         </div>

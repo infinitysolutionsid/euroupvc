@@ -33,9 +33,13 @@
                     <div class="col-md-6">
                         <ul class="top-menu">
                             <li><a href="/about-us">About us</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Terms</a></li>
+                            <li><a href="#"><span><i class="fas fa-phone-alt"></i>+62 822 6767 3000</span></a></li>
+                            <li><a href="https://wa.link/02oq01" target="_blank"><span><i class="far fa-comments"></i>
+                                        Live
+                                        Chat</span></a></li>
+                            <li><a href="/contact-us" target="_blank"><span><i class="far fa-question-circle"></i>
+                                        Support</span></a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-6 d-none d-sm-block">

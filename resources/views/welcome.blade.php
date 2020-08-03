@@ -70,9 +70,11 @@
                     <div class="col-md-6 d-none d-sm-block">
                         <div class="social-icons social-icons-colored-hover">
                             <ul>
-                                <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <li class="social-facebook"><a href="https://facebook.com/euro.upvc"><i
+                                            class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li class="social-instagram"><a href="#"><i class="fab fa-instagram"></i></a>
+                                <li class="social-instagram"><a href="https://instagram.com/euroupvc"><i
+                                            class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
                         </div>

@@ -1,6 +1,8 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - Contact Us')
-@section('deschomepage','Ayo konsultusi untuk design upvc di rumah idaman kamu. Jangan ragu. Konsultasi sekarang juga.')
+<?php $y = Date('Y'); ?>
+@section('deschomepage','Ayo konsultusi untuk upvc di rumah idaman kamu. Jangan ragu. Konsultasi sekarang juga, hubungi
+euroupvc.co.id.')
 @section('content')
 <section id="page-content">
     <div class="container">

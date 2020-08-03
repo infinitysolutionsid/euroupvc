@@ -1,6 +1,8 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - About Us')
-@section('deschomepage','Tentang perjalanan panjang yang dialami oleh CV. EURO UPVC.')
+<?php $y = Date('Y'); ?>
+@section('deschomepage','Bagaimana kami memulai usaha dan bisnis upvc di Indonesia terkhusus di Medan dan di Jakarta.
+Kami Euro UPVC.')
 @section('content')
 <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
 

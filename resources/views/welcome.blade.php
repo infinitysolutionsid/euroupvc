@@ -7,7 +7,7 @@
     <meta name="author" content="Bintang Tobing" />
     <meta name="description" content="@yield('deschomepage')">
     <meta name="keywords"
-        content="upvc murah medan, upvc terbaik di medan, upvc kualitas terbaik, euro upvc, euroupvc, upvc termurah, upvc terkuat">
+        content="upvc murah medan, upvc terbaik di medan, upvc kualitas terbaik, euro upvc, euroupvc, upvc termurah, upvc terkuat, upvc medan, upvc jakarta, upvc berkualitas, upvc desain custom">
     <link rel="shortcut icon" href="{!!asset('images/favicon.ico')!!}" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -57,9 +57,11 @@
                     <div id="logo">
                         <a href="/">
                             <span class="logo-default"><img class="img-fluid"
-                                    src="{!!asset('homepages/real-estate/images/logo.png')!!}" alt=""></span>
+                                    src="{!!asset('homepages/real-estate/images/logo.png')!!}"
+                                    alt="Logo Euro UPVC png"></span>
                             <span class="logo-dark"><img class="img-fluid"
-                                    src="{!!asset('homepages/real-estate/images/logo.png')!!}" alt=""></span>
+                                    src="{!!asset('homepages/real-estate/images/logo.png')!!}"
+                                    alt="Logo Euro UPVC png"></span>
                         </a>
                     </div>
                     <div id="mainMenu-trigger">

@@ -1,7 +1,8 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - Your trusted & Best UPVC Quality Product')
-@section('deschomepage'.'Jual UPVC Medan dengan kualitas terbaik, dengan berbagai pilihan desain UPVC membuat rumah anda
-sangat nyaman dan indah. Ayo kunjungi sekarang!')
+<?php $y = Date('Y'); ?>
+@section('deschomepage','Beli UPVC terdekat di Medan dan di Jakarta berkualitas dengan harga murah terbaru '.$y.' di
+euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
 @section('content')
 <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360" data-autoplay="3200" data-animate-in="fadeIn"
     data-animate-out="fadeOut" data-items="1" data-loop="true" data-autoplay="true">
@@ -171,54 +172,54 @@ sangat nyaman dan indah. Ayo kunjungi sekarang!')
                 </div>
             </div>
             <div class="col-lg-4 variouspall text-right">
-                <img class="img-fluid" src="images/various.png" alt="">
+                <img class="img-fluid" src="images/various.png" alt="Produk Euro UPVC Variasi Warna">
             </div>
         </div>
         <div class="row justify-content-center imgvarious m-t-50">
             <div class="col-lg-2 text-center">
-                <img src="images/material/black.png" alt="">
+                <img src="images/material/black.png" alt="Warna Produk Euro UPVC - Black Various">
                 <h4>Black</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/darkbrown.png" alt="">
+                <img src="images/material/darkbrown.png" alt="Warna Produk Euro UPVC - Dark Brown Varioud">
                 <h4>Dark Brown</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/darkoak.png" alt="">
+                <img src="images/material/darkoak.png" alt="Warna Produk Euro UPVC - Dark Oak Various">
                 <h4>Dark Oak</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/goldenoak.png" alt="">
+                <img src="images/material/goldenoak.png" alt="Warna Produk Euro UPVC - Golden Oak Various">
                 <h4>Golden Oak</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/grey.png" alt="">
+                <img src="images/material/grey.png" alt="Warna Produk Euro UPVC - Grey Various">
                 <h4>Grey</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/lblack.png" alt="">
+                <img src="images/material/lblack.png" alt="Warna Produk Euro UPVC - Laminated Black Various">
                 <h4>Laminated Black</h4>
             </div>
         </div>
         <div class="row justify-content-center m-t-50 imgvarious">
             <div class="col-lg-2 text-center">
-                <img src="images/material/mahogani.png" alt="">
+                <img src="images/material/mahogani.png" alt="Warna Produk Euro UPVC - Mahogani Various">
                 <h4>Mahogani</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/naturaloak.png" alt="">
+                <img src="images/material/naturaloak.png" alt="Warna Produk Euro UPVC - Natural Oak Various">
                 <h4>Natural Oak</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/vintageoak.png" alt="">
+                <img src="images/material/vintageoak.png" alt="Warna Produk Euro UPVC - Vintage Oak Various">
                 <h4>Vintage Oak</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/wallnut.png" alt="">
+                <img src="images/material/wallnut.png" alt="Warna Produk Euro UPVC - Wallnutt Various">
                 <h4>Wallnut</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/white.png" alt="">
+                <img src="images/material/white.png" alt="Warna Produk Euro UPVC - White Various">
                 <h4>White</h4>
             </div>
         </div>
@@ -235,15 +236,15 @@ sangat nyaman dan indah. Ayo kunjungi sekarang!')
         </div>
         <div class="row justify-content-center text-center">
             <div class="col-lg-4 p-t-20 p-b-20">
-                <img src="images/product/window.png" alt="">
+                <img src="images/product/window.png" alt="Euro UPVC Product - Window System">
                 <h4>Window System</h4>
             </div>
             <div class="col-lg-4 p-t-20 p-b-20">
-                <img src="images/product/door.png" alt="">
+                <img src="images/product/door.png" alt="Euro UPVC Product - Door System">
                 <h4>Door System</h4>
             </div>
             <div class="col-lg-4 p-t-20 p-b-20">
-                <img src="images/product/sliding-door.png" alt="">
+                <img src="images/product/sliding-door.png" alt="Euro UPVC Product - Sliding Door System">
                 <h4>Sliding Door System</h4>
             </div>
         </div>

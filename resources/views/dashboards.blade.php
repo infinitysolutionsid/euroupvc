@@ -50,7 +50,7 @@
         <div class="nano">
             <div class="nano-content">
                 <div class="logo"><a href="/admin/dashboard">
-                        <!-- <img src="{!!asset('dashboard/assets/images/logo.png')!!}" alt="" /> --><span>UPVC
+                        <span>UPVC
                             SYS</span></a></div>
                 <ul>
                     <li class="label">Main</li>

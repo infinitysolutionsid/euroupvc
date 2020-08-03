@@ -1,6 +1,7 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - '.$blog->judul)
-@section('deschomepage','Semua proyek yang pernah dikerjakan oleh CV. EURO UPVC dikumpulkan didalam arsip website ini.
+<?php $y = Date('Y'); ?>
+@section('deschomepage','Proyek upvc yang pernah kami kerjakan, akan selalu kami arsipkan di euroupvc.co.id.
 Yuk intip projek '.$blog->judul.'.')
 @section('content')
 <section id="page-content" class="sidebar-right">

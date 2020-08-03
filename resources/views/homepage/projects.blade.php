@@ -1,7 +1,8 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - Projects')
-@section('deschomepage','Semua proyek yang pernah dikerjakan oleh CV. EURO UPVC dikumpulkan didalam arsip website
-ini.')
+<?php $y = Date('Y'); ?>
+@section('deschomepage','Semua proyek upvc yang pernah dikerjakan oleh CV. EURO UPVC dikumpulkan di dalam arsip website
+euroupvc.co.id.')
 @section('content')
 <section id="page-content">
     <div class="container">

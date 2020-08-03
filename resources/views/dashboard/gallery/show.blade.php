@@ -105,7 +105,8 @@
                                 @foreach ($galp as $gal)
                                 <tr>
                                     <th scope="row">{{$no++}}</th>
-                                    <td><img src="{!!asset('media/gallery/'.$gal->img)!!}" alt=""></td>
+                                    <td><img src="{!!asset('media/gallery/'.$gal->img)!!}"
+                                            alt="{{$gal->judul_foto}} - {{$gal->img}}"></td>
                                     <td>
                                         {{$gal->judul_foto}}
                                     </td>
@@ -140,7 +141,8 @@
                                                     <div class="col-lg-12 text-center">
                                                         <div class="text-center">
                                                             <img class="img-fluid"
-                                                                src="{!!asset('media/gallery/'.$gal->img)!!}" alt="">
+                                                                src="{!!asset('media/gallery/'.$gal->img)!!}"
+                                                                alt="{{$gal->judul_foto}} - {{$gal->img}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12 text-left">

@@ -21,7 +21,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/admin/gallery/addnewgallery" method="POST" enctype="multipart/form-data">
+                <form id="galleryadd" action="/admin/gallery/addnewgallery" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-row">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button form="galleryadd" type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
             </div>

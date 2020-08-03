@@ -64,3 +64,6 @@ Route::group(['prefix' => 'admin/gallery', 'middleware' => 'isLogin'], function 
     Route::post('/addnewgallery', 'DashboardController@prosesaddgallery');
     Route::get('/trash/{id}', 'DashboardController@trashgallery');
 });
+Route::group(['prefix' => 'admin/emails', 'middleware' => 'isLogin'], function () {
+    Route::get('/read/{id}', 'DashboardController@changestatus');
+});

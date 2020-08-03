@@ -59,9 +59,10 @@ Yuk intip projek '.$blog->judul.'.')
                                 </a>
                             </div> --}}
 
-                            <div class="comments" id="comments">
+                            {{-- COMMENT SECTION --}}
+                            {{-- <div class="comments" id="comments">
                                 <div class="comment_number">
-                                    Comments <span>(2)</span>
+                                    Comments
                                 </div>
                                 <div class="comment-list">
 
@@ -138,33 +139,24 @@ Yuk intip projek '.$blog->judul.'.')
 
                                 </div>
                             </div>
-
                             <div class="respond-form" id="respond">
                                 <div class="respond-comment">
                                     Leave a <span>Comment</span></div>
                                 <form class="form-gray-fields">
                                     <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="upper" for="name">Name</label>
                                                 <input class="form-control required" name="senderName"
                                                     placeholder="Enter name" id="name" aria-required="true" type="text">
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="upper" for="email">Email</label>
                                                 <input class="form-control required email" name="senderEmail"
                                                     placeholder="Enter email" id="email" aria-required="true"
                                                     type="email">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label class="upper" for="website">Website</label>
-                                                <input class="form-control website" name="senderWebsite"
-                                                    placeholder="Enter Website" id="website" aria-required="false"
-                                                    type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -186,7 +178,7 @@ Yuk intip projek '.$blog->judul.'.')
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 

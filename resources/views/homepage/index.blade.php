@@ -297,7 +297,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
                 <div class="post-item border">
                     <div class="post-item-wrap">
                         <div class="post-image">
-                            <a href="#">
+                            <a href="/blog/{{$blog->judul}}">
                                 <img alt="Blog EURO UPVC{{$blog->judul}}"
                                     src="{!!asset('media/blog/'.$blog->coverimg)!!}">
                             </a>

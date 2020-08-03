@@ -37,7 +37,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="/admin/user/addnewuser" method="POST">
+                                    <form id="adduser" action="/admin/user/addnewuser" method="POST">
                                         @csrf
                                         <div class="modal-body">
                                             <div class="form-row">
@@ -88,7 +88,8 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                            <button form="adduser" type="submit" class="btn btn-primary">Save
+                                                changes</button>
                                         </div>
                                     </form>
                                 </div>

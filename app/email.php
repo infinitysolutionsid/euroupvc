@@ -13,5 +13,6 @@ class email extends Model
         'nohp',
         'message',
         'type',
+        'status',
     ];
 }

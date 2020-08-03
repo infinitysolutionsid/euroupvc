@@ -235,7 +235,11 @@ class DashboardController extends Controller
     // EMAILS SECTION
     public function showemails()
     {
-        return view('dashboard.emails.show');
+        $email = DB::table('emails')
+            ->orderBy('emails.created_at', 'DESC')
+            ->select('emails.*')
+            ->get();
+        return view('dashboard.emails.show', ['email' => $email]);
     }
 
     // Email kirim
@@ -253,5 +257,12 @@ class DashboardController extends Controller
         $email->save();
         // return back()->with('great', 'Halo ' . $name . ', kami telah menerima pesan kamu. Biasanya kami membalas dalam waktu 3x24 jam, dan kami akan segera membalas ke email anda maupun melalui nomor telepon yang sudah kamu input. Terima kasih ya.');
         return view('receivedemails', ['name' => $name]);
+    }
+    public function changestatus($id, Request $request)
+    {
+        $email = email::find($id);
+        $email->status = 'read';
+        $email->save();
+        return back()->with('selamat', 'Email tersebut sudah berhasil diubah ke status sudah dibaca.');
     }
 }

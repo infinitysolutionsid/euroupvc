@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('titlepage','Euro UPVC - Your trusted & Best UPVC Quality Product')
+@section('titlepage','Euro UPVC - The Best uPVC Quality, you can Trust.')
 <?php $y = Date('Y'); ?>
 @section('deschomepage','Beli UPVC terdekat di Medan dan di Jakarta berkualitas dengan harga murah terbaru '.$y.' di
 euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')

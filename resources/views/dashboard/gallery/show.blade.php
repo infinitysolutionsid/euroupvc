@@ -117,7 +117,8 @@
                                             class="btn btn-secondary btn-rounded">
                                             <span style="color:;"><i class="fas fa-eye"></i></span>
                                         </a>
-                                        <a href="/admin/gallery/trash/{{$gal->id}}" class="btn btn-danger btn-rounded">
+                                        <a href="/admin/gallery/trash/{!!$gal->id!!}"
+                                            class="btn btn-danger btn-rounded">
                                             <span><i class="fas fa-trash"></i></span>
                                         </a>
                                     </td>

@@ -157,7 +157,7 @@ class DashboardController extends Controller
             ->get();
         $galp = DB::table('gallerydbs')
             ->join('productsdbs', 'gallerydbs.product_id', '=', 'productsdbs.id')
-            ->select('gallerydbs.*', 'productsdbs.*')
+            ->select('gallerydbs.*', 'productsdbs.product_name', 'productsdbs.description')
             ->orderBy('gallerydbs.created_at', 'DESC')
             ->get();
         return view('dashboard.gallery.show', ['product' => $product, 'gal' => $gal, 'galp' => $galp]);

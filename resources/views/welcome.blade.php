@@ -7,7 +7,7 @@
     <meta name="author" content="Bintang Tobing" />
     <meta name="description" content="@yield('deschomepage')">
     <meta name="keywords"
-        content="upvc murah medan, upvc terbaik di medan, upvc kualitas terbaik, euro upvc, euroupvc, upvc termurah, upvc terkuat, upvc medan, upvc jakarta, upvc berkualitas, upvc desain custom">
+        content="upvc murah medan, upvc terbaik di medan, upvc kualitas terbaik, euro upvc, euroupvc, upvc termurah, upvc terkuat, upvc medan, upvc jakarta, upvc pekanbaru, upvc berkualitas, upvc desain custom">
     <link rel="shortcut icon" href="{!!asset('images/favicon.ico')!!}" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 

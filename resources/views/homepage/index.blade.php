@@ -29,65 +29,72 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
         </div>
     </div>
 </div>
-<div class="background-grey">
-    <div class="container p-t-60 p-b-60">
-        @if(session('great'))
+
+<section class="variouscolor">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-12 text-center">
-                <div role="alert" class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                            aria-hidden="true">&times;</span> </button>
-                    <strong><i class="fa fa-check-circle"></i> Success!</strong> {{session('great')}}
+            <div class="col-lg-6">
+                <div class="heading-text heading-section text-left">
+                    <h2>Warna Bervariasi</h2>
+                    <span class="lead">Kami sadar bahwa client kami sangat mencintai banyak motif dengan itu
+                        kami
+                        memproduksi produk kami dengan banyak variasi warna.</span>
                 </div>
+            </div>
+            <div class="col-lg-4 variouspall text-right">
+                <img class="img-fluid" src="images/various.png" alt="Produk Euro UPVC Variasi Warna">
             </div>
         </div>
-        @endif
-        <div class="row">
-            <div class="col-lg-7">
-                <h2 class="text-medium">Butuh saran untuk bagian UPVC dalam rumahmu?</h2>
-                <p>Kami akan mengirimkan saran/proposal ke email kamu. <br>Hanya untukmu!</p>
+        <div class="row justify-content-center imgvarious m-t-50">
+            <div class="col-lg-2 text-center">
+                <img src="images/material/black.png" alt="Warna Produk Euro UPVC - Black Various">
+                <h4>Black</h4>
             </div>
-            <div class="col-lg-5 real-estate-form-container">
-                <div class="real-estate-form">
-                    <div class="text-dark p-40 background-white">
-                        <h3 class="m-b-20">Isi Form</h3>
-                        <form id="widget-contact-form-agent" class="form-gray-fields" action="/kirim-pesan" role="form"
-                            method="post">
-                            @csrf
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="name">Nama Lengkap</label>
-                                        <input type="text" aria-required="true" name="name"
-                                            class="form-control required name" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" aria-required="true" name="email"
-                                            class="form-control required email" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nohp">No HP</label>
-                                        <input type="nohp" aria-required="true" name="nohp"
-                                            class="form-control required email" placeholder="">
-                                    </div>
-                                    <input type="hidden" name="type" value="Request Penawaran">
-                                    <input type="hidden" name="message"
-                                        value="Hallo admin EURO UPVC, saya ingin meminta penawaran harga dan produk UPVC.">
-                                    <div class="form-group">
-                                        <button class="btn button border black rounded" type="submit"
-                                            id="form-submit">Dapatkan penawaran!</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/darkbrown.png" alt="Warna Produk Euro UPVC - Dark Brown Varioud">
+                <h4>Dark Brown</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/darkoak.png" alt="Warna Produk Euro UPVC - Dark Oak Various">
+                <h4>Dark Oak</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/goldenoak.png" alt="Warna Produk Euro UPVC - Golden Oak Various">
+                <h4>Golden Oak</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/grey.png" alt="Warna Produk Euro UPVC - Grey Various">
+                <h4>Grey</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/lblack.png" alt="Warna Produk Euro UPVC - Laminated Black Various">
+                <h4>Laminated Black</h4>
+            </div>
+        </div>
+        <div class="row justify-content-center m-t-50 imgvarious">
+            <div class="col-lg-2 text-center">
+                <img src="images/material/mahogani.png" alt="Warna Produk Euro UPVC - Mahogani Various">
+                <h4>Mahogani</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/naturaloak.png" alt="Warna Produk Euro UPVC - Natural Oak Various">
+                <h4>Natural Oak</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/vintageoak.png" alt="Warna Produk Euro UPVC - Vintage Oak Various">
+                <h4>Vintage Oak</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/wallnut.png" alt="Warna Produk Euro UPVC - Wallnutt Various">
+                <h4>Wallnut</h4>
+            </div>
+            <div class="col-lg-2 text-center">
+                <img src="images/material/white.png" alt="Warna Produk Euro UPVC - White Various">
+                <h4>White</h4>
             </div>
         </div>
     </div>
-</div>
-
+</section>
 
 <section id="section2" class="p-t-100">
     <div class="container">
@@ -160,71 +167,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
         </div>
     </div>
 </section>
-<section class="variouscolor">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="heading-text heading-section text-left">
-                    <h2>Warna Bervariasi</h2>
-                    <span class="lead">Kami sadar bahwa client kami sangat mencintai banyak motif dengan itu
-                        kami
-                        memproduksi produk kami dengan banyak variasi warna.</span>
-                </div>
-            </div>
-            <div class="col-lg-4 variouspall text-right">
-                <img class="img-fluid" src="images/various.png" alt="Produk Euro UPVC Variasi Warna">
-            </div>
-        </div>
-        <div class="row justify-content-center imgvarious m-t-50">
-            <div class="col-lg-2 text-center">
-                <img src="images/material/black.png" alt="Warna Produk Euro UPVC - Black Various">
-                <h4>Black</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/darkbrown.png" alt="Warna Produk Euro UPVC - Dark Brown Varioud">
-                <h4>Dark Brown</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/darkoak.png" alt="Warna Produk Euro UPVC - Dark Oak Various">
-                <h4>Dark Oak</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/goldenoak.png" alt="Warna Produk Euro UPVC - Golden Oak Various">
-                <h4>Golden Oak</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/grey.png" alt="Warna Produk Euro UPVC - Grey Various">
-                <h4>Grey</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/lblack.png" alt="Warna Produk Euro UPVC - Laminated Black Various">
-                <h4>Laminated Black</h4>
-            </div>
-        </div>
-        <div class="row justify-content-center m-t-50 imgvarious">
-            <div class="col-lg-2 text-center">
-                <img src="images/material/mahogani.png" alt="Warna Produk Euro UPVC - Mahogani Various">
-                <h4>Mahogani</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/naturaloak.png" alt="Warna Produk Euro UPVC - Natural Oak Various">
-                <h4>Natural Oak</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/vintageoak.png" alt="Warna Produk Euro UPVC - Vintage Oak Various">
-                <h4>Vintage Oak</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/wallnut.png" alt="Warna Produk Euro UPVC - Wallnutt Various">
-                <h4>Wallnut</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/white.png" alt="Warna Produk Euro UPVC - White Various">
-                <h4>White</h4>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="ourproduct">
     <div class="container">
         <div class="row justify-content-center">
@@ -282,6 +225,64 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
     </div>
 
 </section>
+<div class="background-grey">
+    <div class="container p-t-60 p-b-60">
+        @if(session('great'))
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div role="alert" class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span> </button>
+                    <strong><i class="fa fa-check-circle"></i> Success!</strong> {{session('great')}}
+                </div>
+            </div>
+        </div>
+        @endif
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="text-medium">Butuh saran untuk bagian UPVC dalam rumahmu?</h2>
+                <p>Kami akan mengirimkan saran/proposal ke email kamu. <br>Hanya untukmu!</p>
+            </div>
+            <div class="col-lg-5 real-estate-form-container">
+                <div class="real-estate-form">
+                    <div class="text-dark p-40 background-white">
+                        <h3 class="m-b-20">Isi Form</h3>
+                        <form id="widget-contact-form-agent" class="form-gray-fields" action="/kirim-pesan" role="form"
+                            method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="name">Nama Lengkap</label>
+                                        <input type="text" aria-required="true" name="name"
+                                            class="form-control required name" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" aria-required="true" name="email"
+                                            class="form-control required email" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nohp">No HP</label>
+                                        <input type="nohp" aria-required="true" name="nohp"
+                                            class="form-control required email" placeholder="">
+                                    </div>
+                                    <input type="hidden" name="type" value="Request Penawaran">
+                                    <input type="hidden" name="message"
+                                        value="Hallo admin EURO UPVC, saya ingin meminta penawaran harga dan produk UPVC.">
+                                    <div class="form-group">
+                                        <button class="btn button border black rounded" type="submit"
+                                            id="form-submit">Dapatkan penawaran!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <section class="content">
     <div class="container">

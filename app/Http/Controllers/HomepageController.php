@@ -22,7 +22,11 @@ class HomepageController extends Controller
             ->orderBy('productsdbs.product_name', 'ASC')
             ->select('productsdbs.*')
             ->get();
-        return view('homepage.index', ['blog' => $blog, 'galp' => $galp, 'product' => $product]);
+        $partner = DB::table('partners')
+            ->orderBy('partners.created_at', 'DESC')
+            ->select('partners.*')
+            ->get();
+        return view('homepage.index', ['blog' => $blog, 'galp' => $galp, 'product' => $product, 'partner' => $partner]);
     }
     public function blogview($judul)
     {

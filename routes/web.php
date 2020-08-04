@@ -43,6 +43,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'isLogin'], function () {
     Route::get('/gallery', 'DashboardController@showgallery');
     Route::get('/products', 'DashboardController@showproducts');
     Route::get('/emails', 'DashboardController@showemails');
+    Route::get('/announcement', 'DashboardController@showannounce');
+    Route::get('/partner', 'DashboardController@showpartner');
 });
 
 Route::group(['prefix' => 'admin/user', 'middleware' => 'isLogin'], function () {
@@ -64,6 +66,14 @@ Route::group(['prefix' => 'admin/gallery', 'middleware' => 'isLogin'], function 
     Route::post('/addnewgallery', 'DashboardController@prosesaddgallery');
     Route::get('/trash/{id}', 'DashboardController@trashgallery');
 });
+Route::group(['prefix' => 'admin/partner', 'middleware' => 'isLogin'], function () {
+    Route::post('/addnewpartner', 'DashboardController@prosesaddpartner');
+    Route::get('/trash/{id}', 'DashboardController@trashpartner');
+});
 Route::group(['prefix' => 'admin/emails', 'middleware' => 'isLogin'], function () {
     Route::get('/read/{id}', 'DashboardController@changestatus');
+});
+Route::group(['prefix' => 'admin/announcement', 'middleware' => 'isLogin'], function () {
+    Route::post('/addnewannouncement', 'DashboardController@addnewannouncement');
+    Route::post('/editannouncement/{id}', 'DashboardController@editannounce');
 });

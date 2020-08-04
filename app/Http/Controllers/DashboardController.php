@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 use App\admindb;
+use App\announce;
 use App\blogdb;
 use App\email;
 use App\gallerydb;
+use App\partner;
 use App\productsdb;
 
 class DashboardController extends Controller
@@ -40,7 +42,10 @@ class DashboardController extends Controller
     // Content GET of Dashboard
     public function index()
     {
-        return view('dashboard.index');
+        $ann = DB::table('announces')
+            ->where('status', '=', 'Active')
+            ->first();
+        return view('dashboard.index', ['ann' => $ann]);
     }
     // User Section
     public function showuser()
@@ -265,4 +270,66 @@ class DashboardController extends Controller
         $email->save();
         return back()->with('selamat', 'Email tersebut sudah berhasil diubah ke status sudah dibaca.');
     }
+
+    // Announcement Section
+    public function showannounce()
+    {
+        $ann = announce::all();
+        return view('dashboard.announce.show', ['ann' => $ann]);
+    }
+    public function addnewannouncement(Request $request)
+    {
+        $ann = new announce();
+        $ann->title = $request->title;
+        $ann->messages = $request->messages;
+        $ann->status = 'Active';
+        $ann->save();
+
+        return back()->with('selamat', 'Berhasil menambah pengumuman');
+    }
+    public function editannounce($id, Request $request)
+    {
+        $ann = announce::find($id);
+        $ann->title = $request->title;
+        $ann->messages = $request->messages;
+        $ann->status = $request->status;
+        $ann->save();
+        return back()->with('selamat', 'Pengumuman berhasil diupdate');
+    }
+    // END
+
+    // Partner Section
+    public function showpartner()
+    {
+        $partner = partner::orderBy('created_at', 'DESC')->get();
+        return view('dashboard.partner.show', ['partner' => $partner]);
+    }
+    public function prosesaddpartner(Request $request)
+    {
+        $partner = new partner();
+        $partner->title = $request->title;
+        if (!$request->hasFile('image')) {
+            $partner->save();
+        } else {
+            $lamp = $request->file('image');
+            $filename = time() . '.' . $lamp->getClientOriginalExtension();
+            $request->file('image')->move('media/partner/', $filename);
+            $partner->image = $filename;
+            $partner->save();
+        }
+        return back()->with('selamat', 'Partner kamu berhasil ditambahkan!');
+    }
+    public function trashpartner($id)
+    {
+        $partner = partner::find($id);
+        // dd($user);
+        if ($partner) {
+            if ($partner->delete()) {
+                DB::statement('ALTER TABLE partners AUTO_INCREMENT = ' . (count(partner::all()) + 1) . ';');
+
+                return back()->with('selamat', 'Data Partner dalam sistem ini berhasil dihapus.');
+            }
+        }
+    }
+    // End Section
 }

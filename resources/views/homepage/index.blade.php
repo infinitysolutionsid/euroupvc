@@ -329,39 +329,20 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
         <div class="heading-text heading-section text-center">
             <h2>OUR PARTNERS</h2>
         </div>
-        <ul class="grid grid-4-columns">
+        <ul class="grid grid-6-columns">
+            @if(!$partner->isEmpty())
+            @foreach ($partner as $partner)
             <li>
-                <a href="#"><img src="images/clients/1.png" alt="Zplast Zhongcai Group Logo">
+                <a href="#"><img src="{!!asset('media/partner/'.$partner->image)!!}"
+                        alt="{{$partner->title}} &copy;euroupvc.co.id">
                 </a>
             </li>
-            <li>
-                <a href="#"><img src="images/clients/2.png" alt="Dimex German UPVC Logo">
-                </a>
-            </li>
-            <li>
-                <a href="#"><img src="images/clients/3.png" alt="CHUGN Logo">
-                </a>
-            </li>
-            <li>
-                <a href="#"><img src="images/clients/4.png" alt="Roto Logo">
-                </a>
-            </li>
-            <li>
-                <a href="#"><img src="images/clients/5.png" alt="PWS Logo">
-                </a>
-            </li>
-            <li>
-                <a href="#"><img src="images/clients/6.png" alt="Hanwha Logo">
-                </a>
-            </li>
-            <li>
-                <a href="#"><img src="images/clients/7.png" alt="LG Hausys Logo">
-                </a>
-            </li>
-            <li>
-                <a href="#"><img src="images/clients/8.png" alt="Better Logo">
-                </a>
-            </li>
+            @endforeach
+            @else
+            <div class="text-center">
+                <h4>No data founded</h4>
+            </div>
+            @endif
         </ul>
     </div>
 </section>

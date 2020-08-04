@@ -5,6 +5,13 @@
 <div class="container-fluid">
     <section id="main-content">
         <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-danger">
+                    <strong>{{$ann->title}}:</strong><br>{!!strip_tags($ann->messages)!!}
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-3">
                 <div class="card">
                     <div class="stat-widget-two">

@@ -57,7 +57,11 @@
                     <li class="@yield('activedashboard')"><a href="/admin/dashboard"><i class="ti-home"></i> Dashboard
                         </a>
                     </li>
-
+                    <?php $getRole = session()->get('role');?>
+                    @if($getRole=='Developer')
+                    <li class="@yield('activeannounce')"><a href="/admin/announcement"><i class="ti-bell"></i>
+                            Announcement</a></li>
+                    @endif
                     <li class="label">Apps</li>
                     <li class="@yield('activeuser')"><a class="sidebar-sub-toggle"><i class="ti-lock"></i> Credentials
                             <span class="sidebar-collapse-icon ti-angle-down"></span></a>
@@ -70,6 +74,8 @@
                     <li class="@yield('activeproducts')"><a href="/admin/products"><i class="ti-bag"></i> Products </a>
                     </li>
                     <li class="@yield('activegallery')"><a href="/admin/gallery"><i class="ti-gallery"></i> Gallery </a>
+                    </li>
+                    <li class="@yield('activepartner')"><a href="/admin/partner"><i class="ti-link"></i> Partner </a>
                     </li>
                 </ul>
             </div>
@@ -138,10 +144,15 @@
             </div>
             @yield('contents')
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6 text-left">
                     <div class="footer">
                         <?php $y = Date('Y') ?>
                         <p>©{{$y}} CV. EURO UPVC - All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer">
+                        <p style="text-align: right !important;">{!!session()->get('role')!!} Level Authority.</p>
                     </div>
                 </div>
             </div>

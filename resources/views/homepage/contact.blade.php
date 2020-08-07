@@ -39,12 +39,13 @@ euroupvc.co.id.')
                     </div>
                     <div class="col-lg-4 m-b-30">
                         <address>
+                            <strong>Showroom:</strong><br>
                             Jl Ringroad, Jl. Setia Budi Blk. II No.99s <br>
                             at Home Centra <br>
                             Medan - Sumatera Utara 20122 <br>
                         </address>
-                        <strong>Phone:</strong> <a href="https://api.whatsapp.com/send?phone=6282267673000">(+62) 822
-                            6767 3000</a>
+                        <strong>Phone:</strong> <a href="https://api.whatsapp.com/send?phone=6285373673000">(+62) 853
+                            7367 3000</a>
                         <br>
                         <strong>Email:</strong> <a href="mailto:info@euroupvc.co.id">info@euroupvc.co.id</a>
                     </div>

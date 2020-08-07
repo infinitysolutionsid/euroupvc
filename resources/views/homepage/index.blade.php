@@ -278,6 +278,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
                                         <label for="nohp">No HP</label>
                                         <input type="nohp" aria-required="true" name="nohp"
                                             class="form-control required email" placeholder="">
+                                        <small class="text-muted">Masukkan dengan format +62812345****</small>
                                     </div>
                                     <input type="hidden" name="type" value="Request Penawaran">
                                     <input type="hidden" name="message"

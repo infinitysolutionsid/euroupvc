@@ -226,6 +226,7 @@
                                     <label for="nohp">No HP</label>
                                     <input type="tel" aria-required="true" required name="nohp"
                                         class="form-control required" placeholder="Enter your phone number">
+                                    <small class="text-muted">Masukkan dengan format +62812345****</small>
                                 </div>
                             </div>
                             <div class="form-group">

@@ -105,11 +105,8 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            {{-- <form id="addannounce"
-                                                action="/admin/announcement/editannouncement/{{$ann->id}}"
-                                            method="POST"> --}}
                                             <form action="/admin/announcement/editannouncement/{{$ann->id}}"
-                                                id="addannounce" method="post">
+                                                id="editannounce" method="post">
                                                 @csrf
                                                 <div class="modal-body">
                                                     <div class="form-row">
@@ -146,7 +143,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button form="addannounce" type="submit"
+                                                    <button onclick="form_submit()" form="editannounce" type="submit"
                                                         class="btn btn-primary">Save changes</button>
                                                 </div>
                                             </form>
@@ -168,4 +165,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function form_submit() {
+        document.getElementById("editannounce").submit();
+    }
+
+</script>
 @endsection

@@ -181,7 +181,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="heading-text heading-section">
-                    <h2>Produk Kami</h2>
+                    <h2>Katalog Produk Utama Kami</h2>
                 </div>
             </div>
         </div>

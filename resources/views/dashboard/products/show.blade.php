@@ -20,11 +20,11 @@
                 <div class="card-title">
                     <div class="row">
                         <div class="col-lg-6 text-left">
-                            Product Managements
+                            Katalog Product Managements
                         </div>
                         <div class="col-lg-6 text-right">
                             <button class="btn btn-primary" type="button" data-toggle="modal"
-                                data-target="#addnewproducts">Add New Products</button>
+                                data-target="#addnewproducts">Add New Katalog</button>
                         </div>
                         <!-- Modal add new products -->
                         <div class="modal fade" id="addnewproducts" tabindex="-1" role="dialog"
@@ -160,7 +160,7 @@
                                                     <h5>Informasi umum</h5>
                                                     <p>
                                                         Nama Produk: {{$products->product_name}} <br>
-                                                        Deskripsi Produk: <br>{{$products->description}} <br>
+                                                        Deskripsi Produk: <br>{!!$products->description!!} <br>
                                                     </p>
                                                 </div>
                                             </div>

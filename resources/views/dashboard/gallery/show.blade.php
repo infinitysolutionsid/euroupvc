@@ -16,7 +16,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addnewgallery">Add new gallery</h5>
+                    <h5 class="modal-title" id="addnewgallery">Tambah gallery</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    {{-- end modal add new post --}}
+    {{-- end modal Tambah post --}}
     @if(session('selamat'))
     <div class="row">
         <div class="col-lg-12">

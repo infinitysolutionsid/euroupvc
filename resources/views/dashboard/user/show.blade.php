@@ -24,15 +24,15 @@
                         </div>
                         <div class="col-lg-6 text-right">
                             <button class="btn btn-primary" type="button" data-toggle="modal"
-                                data-target="#addnewuser">Add New User</button>
+                                data-target="#addnewuser">Tambah User</button>
                         </div>
-                        <!-- Modal add new user -->
+                        <!-- Modal Tambah user -->
                         <div class="modal fade" id="addnewuser" tabindex="-1" role="dialog" aria-labelledby="addnewuser"
                             aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addnewuser">Add New User</h5>
+                                        <h5 class="modal-title" id="addnewuser">Tambah User</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>

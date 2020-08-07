@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    {{-- end modal add new post --}}
+    {{-- end modal Tambah post --}}
 </div>
 <div class="container">
     <div class="row">
@@ -150,7 +150,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- end modal add new post --}}
+                                {{-- end modal Tambah post --}}
                                 @endforeach
                                 @else
                                 <tr>

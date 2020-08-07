@@ -11,6 +11,8 @@ use App\announce;
 use App\blogdb;
 use App\email;
 use App\gallerydb;
+use App\itemproduk;
+use App\kategori;
 use App\partner;
 use App\productsdb;
 
@@ -203,22 +205,46 @@ class DashboardController extends Controller
             ->orderBy('productsdbs.product_name', 'ASC')
             ->select('productsdbs.*')
             ->get();
-        $kategori = DB::table('kategoris')
-            ->orderBy('kategoris.nama_kategori', 'ASC')
-            ->select('kategoris.*')
+        $productget = DB::table('productsdbs')
+            ->orderBy('productsdbs.product_name', 'ASC')
+            ->select('productsdbs.*')
             ->get();
-        $item = DB::table('itemproduks')
+        $kategori = DB::table('kategoris')
+            ->join('productsdbs', 'kategoris.product_id', '=', 'productsdbs.id')
+            ->orderBy('kategoris.nama_kategori', 'ASC')
+            ->select('kategoris.*', 'productsdbs.*', 'kategoris.description as descriptionKat')
+            ->get();
+        $produk = DB::table('itemproduks')
             ->orderBy('itemproduks.nama_item', 'ASC')
             ->select('itemproduks.*')
             ->get();
-        return view('dashboard.products.show', ['products' => $products, 'kategori' => $kategori, 'item' => $item]);
+        return view('dashboard.products.show', ['products' => $products, 'kategori' => $kategori, 'produk' => $produk, 'productget' => $productget]);
     }
     // // // Kategori Section
-
+    public function prosesaddkategori(Request $request)
+    {
+        $kategori = new kategori();
+        $kategori->product_id = $request->product_id;
+        $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->description = $request->description;
+        // dd($request->all());
+        $kategori->save();
+        return back()->with('selamat', 'Data kategori produk berhasil diupdate');
+    }
     // End Section
     // // // // // // // // // // // // // //
 
     // // // Item Section
+    public function prosesadditem(Request $request)
+    {
+        $item = new itemproduk();
+        $item->kategori_id = $request->kategori_id;
+        $item->nama_item = $request->nama_item;
+        $item->description = $request->description;
+        // dd($request->all());
+        $item->save();
+        return back()->with('selamat', 'Data item produk berhasil diupdate');
+    }
     // End Item Section
     public function prosesaddproduct(Request $request)
     {

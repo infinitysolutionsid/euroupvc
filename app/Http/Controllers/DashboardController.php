@@ -203,8 +203,23 @@ class DashboardController extends Controller
             ->orderBy('productsdbs.product_name', 'ASC')
             ->select('productsdbs.*')
             ->get();
-        return view('dashboard.products.show', ['products' => $products]);
+        $kategori = DB::table('kategoris')
+            ->orderBy('kategoris.nama_kategori', 'ASC')
+            ->select('kategoris.*')
+            ->get();
+        $item = DB::table('itemproduks')
+            ->orderBy('itemproduks.nama_item', 'ASC')
+            ->select('itemproduks.*')
+            ->get();
+        return view('dashboard.products.show', ['products' => $products, 'kategori' => $kategori, 'item' => $item]);
     }
+    // // // Kategori Section
+
+    // End Section
+    // // // // // // // // // // // // // //
+
+    // // // Item Section
+    // End Item Section
     public function prosesaddproduct(Request $request)
     {
         $product = new productsdb();
@@ -332,4 +347,6 @@ class DashboardController extends Controller
         }
     }
     // End Section
+
+
 }

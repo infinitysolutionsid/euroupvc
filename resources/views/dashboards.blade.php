@@ -62,13 +62,13 @@
                     <li class="@yield('activeannounce')"><a href="/admin/announcement"><i class="ti-bell"></i>
                             Announcement</a></li>
                     @endif
-                    <li class="label">Apps</li>
                     <li class="@yield('activeuser')"><a class="sidebar-sub-toggle"><i class="ti-lock"></i> Credentials
                             <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="/admin/user">User Managements</a></li>
                         </ul>
                     </li>
+                    <li class="label">Store Needs</li>
                     <li class="@yield('activeblog')"><a href="/admin/blog"><i class="ti-folder"></i> Project Blog </a>
                     </li>
                     <li class="@yield('activeproducts')"><a href="/admin/products"><i class="ti-bag"></i> Products </a>

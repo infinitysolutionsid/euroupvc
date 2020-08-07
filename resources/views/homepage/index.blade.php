@@ -186,16 +186,20 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
             </div>
         </div>
         <div class="row justify-content-center text-center">
-            <div class="col-lg-4 p-t-20 p-b-20">
-                <img src="images/product/window.png" alt="Euro UPVC Product - Window System">
+            <div class="col-lg-3 p-t-20 p-b-20">
+                <img src="images/product/window.png" alt="Produk Katalog EURO uPVC - Window System">
                 <h4>Window System</h4>
             </div>
-            <div class="col-lg-4 p-t-20 p-b-20">
-                <img src="images/product/door.png" alt="Euro UPVC Product - Door System">
+            <div class="col-lg-3 p-t-20 p-b-20">
+                <img src="images/product/sliding-window.png" alt="Produk Katalog EURO uPVC - Sliding Window System">
+                <h4>Sliding Window System</h4>
+            </div>
+            <div class="col-lg-3 p-t-20 p-b-20">
+                <img src="images/product/door.png" alt="Produk Katalog EURO uPVC - Door System">
                 <h4>Door System</h4>
             </div>
-            <div class="col-lg-4 p-t-20 p-b-20">
-                <img src="images/product/sliding-door.png" alt="Euro UPVC Product - Sliding Door System">
+            <div class="col-lg-3 p-t-20 p-b-20">
+                <img src="images/product/sliding-door.png" alt="Produk Katalog EURO uPVC - Sliding Door System">
                 <h4>Sliding Door System</h4>
             </div>
         </div>

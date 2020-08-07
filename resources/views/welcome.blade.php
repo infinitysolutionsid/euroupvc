@@ -47,6 +47,22 @@
     <meta property="og:description" content="@yield('deschomepage')" />
     <meta property="og:image"
         content="{!!url('https://res.cloudinary.com/sarjanamalam/image/upload/v1596438013/fbimg_vsmk7u.jpg')!!}">
+
+    <!--GTAG JS-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68593210-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-68593210-14');
+
+    </script>
+
 </head>
 
 <body>
@@ -70,10 +86,10 @@
                     <div class="col-md-6 d-none d-sm-block">
                         <div class="social-icons social-icons-colored-hover">
                             <ul>
-                                <li class="social-facebook"><a href="https://facebook.com/euro.upvc"><i
-                                            class="fab fa-facebook-f"></i></a>
+                                <li class="social-facebook"><a href="https://facebook.com/euroupvcmedan"
+                                        target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li class="social-instagram"><a href="https://instagram.com/euroupvc"><i
+                                <li class="social-instagram"><a href="https://instagram.com/euroupvc" target="_blank"><i
                                             class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
@@ -152,18 +168,19 @@
                             </div>
                             <div class="col-lg-6 m-b-30">
                                 <address>
+                                    <strong>Showroom:</strong><br>
                                     Jl Ringroad, Jl. Setia Budi Blk. II No.99s <br>
                                     at Home Centra <br>
                                     Medan - Sumatera Utara 20122 <br>
                                 </address>
                                 <strong>Phone:</strong> <a
-                                    href="https://api.whatsapp.com/send?phone=6282267673000">(+62) 822 6767 3000</a>
+                                    href="https://api.whatsapp.com/send?phone=6285373673000">(+62) 853 7367 3000</a>
                                 <br>
                                 <strong>Email:</strong> <a href="mailto:info@euroupvc.co.id">info@euroupvc.co.id</a>
                             </div>
                             <div class="col-lg-6 m-b-30">
                                 <address>
-                                    <strong>Pabrik:</strong><br>
+                                    <strong>Workshop:</strong><br>
                                     Jln. K.L Yos Sudarso, km 7,9 No.24 <br>
                                     Tanjung Mulia Hilir, Medan Deli
                                     Medan - Sumatera Utara 20242 <br>
@@ -178,9 +195,11 @@
                                 <h4>We are social</h4>
                                 <div class="social-icons social-icons-light social-icons-colored-hover">
                                     <ul>
-                                        <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <li class="social-facebook"><a href="https://facebook.com/euroupvcmedan"
+                                                target="_blank"><i class="fab fa-facebook-f"></i></a>
                                         </li>
-                                        <li class="social-instagram"><a href="#"><i class="fab fa-instagram"></i></a>
+                                        <li class="social-instagram"><a href="https://instagram.com/euroupvc"
+                                                target="_blank"><i class="fab fa-instagram"></i></a>
                                         </li>
                                     </ul>
                                 </div>

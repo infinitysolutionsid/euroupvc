@@ -105,9 +105,11 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form id="addannounce"
+                                            {{-- <form id="addannounce"
                                                 action="/admin/announcement/editannouncement/{{$ann->id}}"
-                                                method="POST">
+                                            method="POST"> --}}
+                                            <form action="/admin/announcement/editannouncement/{{$ann->id}}"
+                                                id="addannounce" method="post">
                                                 @csrf
                                                 <div class="modal-body">
                                                     <div class="form-row">

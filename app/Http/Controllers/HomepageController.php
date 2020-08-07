@@ -23,7 +23,7 @@ class HomepageController extends Controller
             ->select('productsdbs.*')
             ->get();
         $partner = DB::table('partners')
-            ->orderBy('partners.created_at', 'DESC')
+            ->orderBy('partners.id', 'ASC')
             ->select('partners.*')
             ->get();
         return view('homepage.index', ['blog' => $blog, 'galp' => $galp, 'product' => $product, 'partner' => $partner]);

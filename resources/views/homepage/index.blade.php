@@ -47,50 +47,58 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
         </div>
         <div class="row justify-content-center imgvarious m-t-50">
             <div class="col-lg-2 text-center">
-                <img src="images/material/black.png" alt="Warna Produk Euro UPVC - Black Various">
-                <h4>Black</h4>
+                <img src="images/material/white.png" alt="Warna variasi produk EURO uPVC - White High Anti UV Various">
+                <h4>White High Anti UV</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/darkbrown.png" alt="Warna Produk Euro UPVC - Dark Brown Varioud">
-                <h4>Dark Brown</h4>
+                <img src="images/material/black.png" alt="Warna variasi produk EURO uPVC - Black ASA Various">
+                <h4>Black ASA</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/darkoak.png" alt="Warna Produk Euro UPVC - Dark Oak Various">
-                <h4>Dark Oak</h4>
+                <img src="images/material/darkbrown.png" alt="Warna variasi produk EURO uPVC - Dark Brown ASA Various">
+                <h4>Dark Brown ASA</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/goldenoak.png" alt="Warna Produk Euro UPVC - Golden Oak Various">
-                <h4>Golden Oak</h4>
+                <img src="images/material/goldenoak.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Golden Oak Various">
+                <h4>Laminated Golden Oak</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/grey.png" alt="Warna Produk Euro UPVC - Grey Various">
-                <h4>Grey</h4>
+                <img src="images/material/wallnut.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Wallnutt Various">
+                <h4>Laminated Wallnut</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/lblack.png" alt="Warna Produk Euro UPVC - Laminated Black Various">
-                <h4>Laminated Black</h4>
+                <img src="images/material/darkoak.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Dark Oak Various">
+                <h4>Laminated Dark Oak</h4>
             </div>
         </div>
         <div class="row justify-content-center m-t-50 imgvarious">
             <div class="col-lg-2 text-center">
-                <img src="images/material/mahogani.png" alt="Warna Produk Euro UPVC - Mahogani Various">
-                <h4>Mahogani</h4>
+                <img src="images/material/mahogani.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Mahogani Various">
+                <h4>Laminated Mahogani</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/naturaloak.png" alt="Warna Produk Euro UPVC - Natural Oak Various">
-                <h4>Natural Oak</h4>
+                <img src="images/material/vintageoak.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Vintage Oak Various">
+                <h4>Laminated Vintage Oak</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/vintageoak.png" alt="Warna Produk Euro UPVC - Vintage Oak Various">
-                <h4>Vintage Oak</h4>
+                <img src="images/material/naturaloak.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Natural Oak Various">
+                <h4>Laminated Natural Oak</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/wallnut.png" alt="Warna Produk Euro UPVC - Wallnutt Various">
-                <h4>Wallnut</h4>
+                <img src="images/material/lblack.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Sand Stone Black Various">
+                <h4>Laminated Sand Stone Black</h4>
             </div>
             <div class="col-lg-2 text-center">
-                <img src="images/material/white.png" alt="Warna Produk Euro UPVC - White Various">
-                <h4>White</h4>
+                <img src="images/material/grey.png"
+                    alt="Warna variasi produk EURO uPVC - Laminated Anthracite Grey Various">
+                <h4>Laminated Anthracite Grey</h4>
             </div>
         </div>
     </div>

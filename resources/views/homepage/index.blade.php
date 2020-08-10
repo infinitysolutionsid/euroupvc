@@ -187,20 +187,28 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
         </div>
         <div class="row justify-content-center text-center">
             <div class="col-lg-3 p-t-20 p-b-20">
-                <img src="images/product/window.png" alt="Produk Katalog EURO uPVC - Window System">
-                <h4>Window System</h4>
+                <a href="/catalog/door-system">
+                    <img src="images/product/door.png" alt="Produk Katalog EURO uPVC - Door System">
+                    <h4>Door System</h4>
+                </a>
             </div>
             <div class="col-lg-3 p-t-20 p-b-20">
-                <img src="images/product/sliding-window.png" alt="Produk Katalog EURO uPVC - Sliding Window System">
-                <h4>Sliding Window System</h4>
+                <a href="/catalog/sliding-door-system">
+                    <img src="images/product/sliding-door.png" alt="Produk Katalog EURO uPVC - Sliding Door System">
+                    <h4>Sliding Door System</h4>
+                </a>
             </div>
             <div class="col-lg-3 p-t-20 p-b-20">
-                <img src="images/product/door.png" alt="Produk Katalog EURO uPVC - Door System">
-                <h4>Door System</h4>
+                <a href="/catalog/window-system">
+                    <img src="images/product/window.png" alt="Produk Katalog EURO uPVC - Window System">
+                    <h4>Window System</h4>
+                </a>
             </div>
             <div class="col-lg-3 p-t-20 p-b-20">
-                <img src="images/product/sliding-door.png" alt="Produk Katalog EURO uPVC - Sliding Door System">
-                <h4>Sliding Door System</h4>
+                <a href="/catalog/sliding-window-system">
+                    <img src="images/product/sliding-window.png" alt="Produk Katalog EURO uPVC - Sliding Window System">
+                    <h4>Sliding Window System</h4>
+                </a>
             </div>
         </div>
     </div>

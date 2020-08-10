@@ -36,6 +36,25 @@ Route::get('logout', function () {
     return redirect('/admin/dashboard');
 });
 
+// Katalog katalog or PRODUK
+Route::prefix('catalog')->group(function () {
+    Route::get('/door-system', function () {
+        return view('homepage.catalog.doorsystem');
+    });
+    Route::get('/window-system', function () {
+        return view('homepage.catalog.windowsystem');
+    });
+    Route::get('/sliding-window-system', function () {
+        return view('homepage.catalog.slidingwindowsystem');
+    });
+    Route::get('/sliding-door-system', function () {
+        return view('homepage.catalog.slidingdoorsystem');
+    });
+});
+Route::prefix('product/details')->group(function () {
+    Route::get('/{product_name}', 'HomepageControler@productdetails');
+});
+
 Route::group(['prefix' => 'admin', 'middleware' => 'isLogin'], function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/blog', 'DashboardController@showblog');

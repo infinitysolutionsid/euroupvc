@@ -224,8 +224,8 @@ section.dark,
 }
 
 #header[data-transparent="true"]+#page-title {
-    top: -120px;
-    margin-bottom: -124px;
+    top: -85px;
+    margin-bottom: -50px;
     position: relative;
     padding: 220px 0 160px 0;
 }
@@ -1983,7 +1983,7 @@ Main Menu
 #mainMenu nav>ul>li .dropdown-menu>li>span,
 #mainMenu nav>ul>li .dropdown-menu>li [class*="col-"]>ul>li>a {
     font-size: 1rem;
-    line-height: 14px;
+    line-height: 1.5rem;
     font-weight: 500;
     font-style: normal;
     color: #444;
@@ -21186,4 +21186,27 @@ body[data-bg-image] {
 .imgmessages {
     width: 150px;
     height: auto;
+}
+
+#page-title .page-title h1 {
+    background-color: #cb2027;
+    padding: 10px 10px;
+}
+
+.elementtechnical ul li {
+    border-top: 1px solid #cdcdcd;
+    margin-bottom: 8px !important;
+    line-height: 1.5rem;
+    padding: 4px 0;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.elementtechnical ul li {
+    list-style: none;
+}
+
+.lowerCase {
+    vertical-align: -4px;
+    font-size: 70%;
 }

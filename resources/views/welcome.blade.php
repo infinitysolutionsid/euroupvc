@@ -123,12 +123,12 @@
                                     <li><a href="/projects">Projects</a></li>
                                     <li class="dropdown"> <a href="#">Product</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Door</a>
+                                            @foreach (App\productsdb::orderBy('created_at','DESC')->get() as $product)
+                                            <li><a
+                                                    href="/products/details/{{$product->product_name}}">{{$product->product_name}}</a>
                                             </li>
-                                            <li><a href="#">Sliding Door</a></li>
-                                            <li><a href="#">Casement Window</a></li>
-                                            <li><a href="#">Sliding Window</a></li>
-                                            <li><a href="#">Partition</a></li>
+                                            {{-- {{dd($product)}} --}}
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li><a href="#">Career</a></li>

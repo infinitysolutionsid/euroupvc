@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="elementtechnical">
-                                <ul>
+                                <ul style="padding-left: 0px;">
                                     <li>70 mm construction depth<br /></li>
                                     <li>U<span class="lowerCase">f</span>=1.2 W/m²K<br /></li>
                                     <li>U<span class="lowerCase">w</span>=0.93 W/m²K with standard-triple-glazing with
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="elementtechnical">
-                                <ul>
+                                <ul style="padding-left: 0px;">
                                     <li>Up to 45 dB sound insulation (sound insulation class 4)<br /></li>
                                     <li>Up to 41 mm glazing<br /></li>
                                     <li>Wide range of lamination options<br /></li>

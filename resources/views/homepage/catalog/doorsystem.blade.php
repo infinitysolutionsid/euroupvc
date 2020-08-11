@@ -58,7 +58,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="elementtechnical">
-                                <ul>
+                                <ul style="padding-left: 0px;">
                                     <li>62 mm construction depth<br /></li>
                                     <li>U<span class="lowerCase">f</span>=1.5 W/m²K<br /></li>
                                     <li>U<span class="lowerCase">d</span>=1.1 W/m²K with standard-triple-glazing with
@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="elementtechnical">
-                                <ul>
+                                <ul style="padding-left: 0px;">
                                     <li>Use of special security hardware<br />guarantees outstanding burglary protection
                                     </li>
                                     <li>Weldable corner connectors for extra stability<br /></li>

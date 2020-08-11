@@ -110,44 +110,48 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="heading-text heading-section text-left mt-3">
-                    <h1 style="color:#cb2027">Our Door Product</h1>
+                    <h1 style="color:#cb2027">Produk Jendela Kami</h1>
                 </div>
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-lg-4">
-                <a href="/product/details/swing-doors">
+            <div class="col-lg-3">
+                <a href="/product/details/swing-window">
                     <div class="widget text-center border-box p-cb">
-                        <img src="{!!asset('images/subkategori/swing-doors.png')!!}" alt="Swing doors catalog Euro uPVC"
-                            class="img-fluid">
-                        <h3>Swing Doors</h3>
-                        <p class="text-justify">Sering digunakan pada toko usaha, gedung atau rumah. Produk Euro uPVC
-                            memiliki bahan dan
-                            fungsionalitas yang terjamin dan sebagainya..</p>
+                        <img src="{!!asset('images/subkategori/swing-window.png')!!}"
+                            alt="Swing Window catalog Euro uPVC" class="img-fluid">
+                        <h3>Swing Window</h3>
+
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
-                <a href="/product/details/sliding-doors">
+            <div class="col-lg-3">
+                <a href="/product/details/sliding-window">
                     <div class="widget text-center border-box p-cb">
-                        <img src="{!!asset('images/subkategori/sliding-door.png')!!}"
-                            alt="Sliding doors catalog Euro uPVC" class="img-fluid">
-                        <h3>Sliding Doors</h3>
-                        <p class="text-justify">Sering digunakan pada toko usaha, gedung atau rumah. Produk Euro uPVC
-                            memiliki bahan dan
-                            fungsionalitas yang terjamin dan sebagainya..</p>
+                        <img src="{!!asset('images/subkategori/sliding-window.png')!!}"
+                            alt="Sliding window catalog Euro uPVC" class="img-fluid">
+                        <h3>Sliding Window</h3>
+
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
+                <a href="/product/details/fixed-frame-window">
+                    <div class="widget text-center border-box p-cb">
+                        <img src="{!!asset('images/subkategori/fixed-window.png')!!}"
+                            alt="Fixed Frame Window catalog Euro uPVC" class="img-fluid">
+                        <h3>Fixed Frame Window</h3>
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
                 <a href="/product/details/folding-doors">
                     <div class="widget text-center border-box p-cb">
-                        <img src="{!!asset('images/subkategori/folding-door.png')!!}"
-                            alt="Folding doors catalog Euro uPVC" class="img-fluid">
-                        <h3>Folding Doors</h3>
-                        <p class="text-justify">Sering digunakan pada toko usaha, gedung atau rumah. Produk Euro uPVC
-                            memiliki bahan dan
-                            fungsionalitas yang terjamin dan sebagainya..</p>
+                        <img src="{!!asset('images/subkategori/casement-window.png')!!}"
+                            alt="Casement Window catalog Euro uPVC" class="img-fluid">
+                        <h3>Casement Window</h3>
+
                     </div>
                 </a>
             </div>

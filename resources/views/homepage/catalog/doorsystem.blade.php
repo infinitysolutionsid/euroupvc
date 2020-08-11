@@ -3,7 +3,7 @@
 <?php $y = Date('Y'); ?>
 @section('deschomepage','Door System Euro uPVC')
 @section('content')
-<section id="page-title" class="page-title-left text-light" data-bg-parallax="{!!asset('images/katalog/door-1.jpg')!!}">
+<section id="page-title" class="page-title-left text-light" data-bg-parallax="{!!asset('images/katalog/door.jpg')!!}">
     <div class="container">
         <div class="page-title">
             <h1>Door System</h1>
@@ -110,9 +110,7 @@
                         <img src="{!!asset('images/subkategori/swing-doors.png')!!}" alt="Swing doors catalog Euro uPVC"
                             class="img-fluid">
                         <h3>Swing Doors</h3>
-                        <p class="text-justify">Sering digunakan pada toko usaha, gedung atau rumah. Produk Euro uPVC
-                            memiliki bahan dan
-                            fungsionalitas yang terjamin dan sebagainya..</p>
+
                     </div>
                 </a>
             </div>
@@ -122,9 +120,7 @@
                         <img src="{!!asset('images/subkategori/sliding-door.png')!!}"
                             alt="Sliding doors catalog Euro uPVC" class="img-fluid">
                         <h3>Sliding Doors</h3>
-                        <p class="text-justify">Sering digunakan pada toko usaha, gedung atau rumah. Produk Euro uPVC
-                            memiliki bahan dan
-                            fungsionalitas yang terjamin dan sebagainya..</p>
+
                     </div>
                 </a>
             </div>
@@ -134,9 +130,7 @@
                         <img src="{!!asset('images/subkategori/folding-door.png')!!}"
                             alt="Folding doors catalog Euro uPVC" class="img-fluid">
                         <h3>Folding Doors</h3>
-                        <p class="text-justify">Sering digunakan pada toko usaha, gedung atau rumah. Produk Euro uPVC
-                            memiliki bahan dan
-                            fungsionalitas yang terjamin dan sebagainya..</p>
+
                     </div>
                 </a>
             </div>

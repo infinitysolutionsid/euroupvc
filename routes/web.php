@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\DB;
+
+
 Route::get('/', 'HomepageController@index');
 Route::get('/blog/{judul}', 'HomepageController@blogview');
 Route::get('/projects', 'HomepageController@projectsview');
@@ -39,16 +42,36 @@ Route::get('logout', function () {
 // Katalog katalog or PRODUK
 Route::prefix('catalog')->group(function () {
     Route::get('/door-system', function () {
-        return view('homepage.catalog.doorsystem');
+        $door = DB::table('gallerydbs')
+            ->where('gallerydbs.product_id', '=', '1')
+            ->select('gallerydbs.*')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->get();
+        return view('homepage.catalog.doorsystem', ['door' => $door]);
     });
     Route::get('/window-system', function () {
-        return view('homepage.catalog.windowsystem');
+        $window = DB::table('gallerydbs')
+            ->where('gallerydbs.product_id', '=', '3')
+            ->select('gallerydbs.*')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->get();
+        return view('homepage.catalog.windowsystem', ['window' => $window]);
     });
     Route::get('/sliding-window-system', function () {
-        return view('homepage.catalog.slidingwindowsystem');
+        $slidingwin = DB::table('gallerydbs')
+            ->where('gallerydbs.product_id', '=', '4')
+            ->select('gallerydbs.*')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->get();
+        return view('homepage.catalog.slidingwindowsystem', ['slidingwin' => $slidingwin]);
     });
     Route::get('/sliding-door-system', function () {
-        return view('homepage.catalog.slidingdoorsystem');
+        $slidingdoor = DB::table('gallerydbs')
+            ->where('gallerydbs.product_id', '=', '2')
+            ->select('gallerydbs.*')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->get();
+        return view('homepage.catalog.slidingdoorsystem', ['slidingdoor' => $slidingdoor]);
     });
 });
 Route::prefix('product/details')->group(function () {

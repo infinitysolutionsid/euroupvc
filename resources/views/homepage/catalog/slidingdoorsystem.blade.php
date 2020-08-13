@@ -41,8 +41,7 @@
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="https://www.aluplast.net/wAssets/img/renderings/weblication/wThumbnails/797eb107-b34837ab@1168w2x.png"
-                            alt="" class="img-fluid">
+                        <img src="{!!asset('images/sliding-door/multi-slide.png')!!}" alt="" class="img-fluid">
                     </div>
                     <div class="col-lg-6">
                         <div class="heading-text heading-section text-left mt-3">
@@ -67,7 +66,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="heading-text heading-section text-left mt-3">
-                            <h2 style="color: #cb2027">Multi-slide</h2>
+                            <h2 style="color: #cb2027">Easy-slide</h2>
                         </div>
                         <div class="elementtechnical">
                             <ul style="padding-left: 0px;">
@@ -80,8 +79,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img src="https://www.aluplast.net/wAssets/img/renderings/weblication/wThumbnails/d9b1438b-b34837ab@1168w2x.png"
-                            alt="" class="img-fluid">
+                        <img src="{!!asset('images/sliding-door/single-slide.png')!!}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -93,47 +91,36 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="heading-text heading-section text-left mt-3">
-                    <h2 style="color:#cb2027">Sample Image of Sliding Door</h2>
+                    <h2 style="color:#cb2027">Sample Image of Sliding Door System</h2>
                 </div>
             </div>
         </div>
         <div id="portfolio" class="grid-layout portfolio-3-columns" data-margin="30">
+            @if(!$slidingdoor->isEmpty())
+            @foreach ($slidingdoor as $slidingdoor)
             <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
                 <div class="portfolio-item-wrap">
                     <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-door/1.jpg')!!}" alt=""></a>
+                        <a><img src="{!!asset('media/gallery/'.$slidingdoor->img)!!}"
+                                alt="Sample Image Sliding Door - Euro uPVC - {{$slidingdoor->judul_foto}}"></a>
                     </div>
                     <div class="portfolio-description">
-                        <a title="Sample Image Sliding Door - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-door/1.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
+                        <a title="Sample Image Sliding Door - Euro uPVC - {{$slidingdoor->judul_foto}}"
+                            data-lightbox="image" href="{!!asset('media/gallery/'.$slidingdoor->img)!!}"><i
+                                class="fa fa-expand"></i></a>
                     </div>
                 </div>
             </div>
+            @endforeach
+            @else
             <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
                 <div class="portfolio-item-wrap">
                     <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-door/2.jpg')!!}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a title="Sample Image Sliding Door - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-door/2.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
+                        <a>No data found</a>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-door/3.jpg')!!}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a title="Sample Image Sliding Door - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-door/3.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 </section>

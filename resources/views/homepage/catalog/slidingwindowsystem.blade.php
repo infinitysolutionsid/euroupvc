@@ -111,83 +111,36 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="heading-text heading-section text-left mt-3">
-                    <h2 style="color:#cb2027">Sample Image of Sliding Window</h2>
+                    <h2 style="color:#cb2027">Sample Image of Sliding Window System</h2>
                 </div>
             </div>
         </div>
         <div id="portfolio" class="grid-layout portfolio-3-columns" data-margin="30">
+            @if(!$slidingwin->isEmpty())
+            @foreach ($slidingwin as $slidingwin)
             <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
                 <div class="portfolio-item-wrap">
                     <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-window/1.jpg')!!}" alt=""></a>
+                        <a><img src="{!!asset('media/gallery/'.$slidingwin->img)!!}"
+                                alt="Sample Image Sliding Window - Euro uPVC - {{$slidingwin->judul_foto}}"></a>
                     </div>
                     <div class="portfolio-description">
-                        <a title="Sample Image Sliding Window - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-window/1.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
+                        <a title="Sample Image Sliding Window - Euro uPVC - {{$slidingwin->judul_foto}}"
+                            data-lightbox="image" href="{!!asset('media/gallery/'.$slidingwin->img)!!}"><i
+                                class="fa fa-expand"></i></a>
                     </div>
                 </div>
             </div>
+            @endforeach
+            @else
             <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
                 <div class="portfolio-item-wrap">
                     <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-window/2.jpg')!!}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a title="Sample Image Sliding Window - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-window/2.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
+                        <a>No data found</a>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-window/3.jpg')!!}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a title="Sample Image Sliding Window - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-window/3.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-window/4.jpg')!!}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a title="Sample Image Sliding Window - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-window/4.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-window/3.jpg')!!}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a title="Sample Image Sliding Window - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-window/3.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{!!asset('images/sliding-window/1.jpg')!!}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a title="Sample Image Sliding Window - Euro uPVC" data-lightbox="image"
-                            href="{!!asset('images/sliding-window/1.jpg')!!}"><i class="fa fa-expand"></i></a>
-                        {{-- <a><i class="fa fa-link"></i></a> --}}
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 </section>

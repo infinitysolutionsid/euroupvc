@@ -35,8 +35,6 @@
                                 <div class="form-group">
                                     <select name="product_id" id="" class="form-control custom-select" required>
                                         <option>Pilih kategori blog</option>
-                                        <option value="Umum">Umum</option>
-                                        <option value="Berita Update">Berita Update</option>
                                         @foreach ($product as $product)
                                         <option value="{{$product->id}}">{{$product->product_name}}</option>
                                         @endforeach

@@ -130,10 +130,46 @@
                         <img src="{!!asset('images/subkategori/folding-door.png')!!}"
                             alt="Folding doors catalog Euro uPVC" class="img-fluid">
                         <h3>Folding Doors</h3>
-
                     </div>
                 </a>
             </div>
+        </div>
+    </div>
+</section>
+<section class="p-b-30">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="heading-text heading-section text-left mt-3">
+                    <h2 style="color:#cb2027">Sample Image of Door System</h2>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio" class="grid-layout portfolio-3-columns" data-margin="30">
+            @if(!$door->isEmpty())
+            @foreach ($door as $door)
+            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+                <div class="portfolio-item-wrap">
+                    <div class="portfolio-image">
+                        <a><img src="{!!asset('media/gallery/'.$door->img)!!}"
+                                alt="Sample Image Door - Euro uPVC - {{$door->judul_foto}}"></a>
+                    </div>
+                    <div class="portfolio-description">
+                        <a title="Sample Image Door - Euro uPVC - {{$door->judul_foto}}" data-lightbox="image"
+                            href="{!!asset('media/gallery/'.$door->img)!!}"><i class="fa fa-expand"></i></a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            @else
+            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+                <div class="portfolio-item-wrap">
+                    <div class="portfolio-image">
+                        <a>No data found</a>
+                    </div>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 </section>

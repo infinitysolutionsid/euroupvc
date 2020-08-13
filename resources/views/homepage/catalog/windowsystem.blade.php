@@ -158,4 +158,41 @@
         </div>
     </div>
 </section>
+<section class="p-b-30">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="heading-text heading-section text-left mt-3">
+                    <h2 style="color:#cb2027">Sample Image of Window System</h2>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio" class="grid-layout portfolio-3-columns" data-margin="30">
+            @if(!$window->isEmpty())
+            @foreach ($window as $window)
+            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+                <div class="portfolio-item-wrap">
+                    <div class="portfolio-image">
+                        <a><img src="{!!asset('media/gallery/'.$window->img)!!}"
+                                alt="Sample Image Window - Euro uPVC - {{$window->judul_foto}}"></a>
+                    </div>
+                    <div class="portfolio-description">
+                        <a title="Sample Image Window - Euro uPVC - {{$window->judul_foto}}" data-lightbox="image"
+                            href="{!!asset('media/gallery/'.$window->img)!!}"><i class="fa fa-expand"></i></a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            @else
+            <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+                <div class="portfolio-item-wrap">
+                    <div class="portfolio-image">
+                        <a>No data found</a>
+                    </div>
+                </div>
+            </div>
+            @endif
+        </div>
+    </div>
+</section>
 @endsection

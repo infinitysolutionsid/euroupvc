@@ -12,7 +12,7 @@
 */
 
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Redirect;
 
 Route::get('/', 'HomepageController@index');
 Route::get('/blog/{judul}', 'HomepageController@blogview');
@@ -73,6 +73,19 @@ Route::prefix('catalog')->group(function () {
             ->get();
         return view('homepage.catalog.slidingdoorsystem', ['slidingdoor' => $slidingdoor]);
     });
+});
+
+Route::get('/door-system', function () {
+    return Redirect::to('/catalog/door-system');
+});
+Route::get('/window-system', function () {
+    return Redirect::to('/catalog/window-system');
+});
+Route::get('/sliding-window-system', function () {
+    return Redirect::to('/catalog/sliding-window-system');
+});
+Route::get('/sliding-door-system', function () {
+    return Redirect::to('/catalog/sliding-door-system');
 });
 
 Route::prefix('product/details')->group(function () {

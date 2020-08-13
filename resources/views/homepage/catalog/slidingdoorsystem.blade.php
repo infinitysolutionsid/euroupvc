@@ -42,7 +42,8 @@ jaminan garansi yang memiliki rentang waktu garansi yang lama. Tunggu apa lagi? 
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="{!!asset('images/sliding-door/multi-slide.png')!!}" alt="" class="img-fluid">
+                        <img src="{!!asset('images/sliding-door/multi-slide.png')!!}"
+                            alt="©copyright euroupvc materials 2020" class="img-fluid">
                     </div>
                     <div class="col-lg-6">
                         <div class="heading-text heading-section text-left mt-3">
@@ -80,7 +81,8 @@ jaminan garansi yang memiliki rentang waktu garansi yang lama. Tunggu apa lagi? 
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img src="{!!asset('images/sliding-door/single-slide.png')!!}" alt="" class="img-fluid">
+                        <img src="{!!asset('images/sliding-door/single-slide.png')!!}"
+                            alt="©copyright euroupvc materials 2020" class="img-fluid">
                     </div>
                 </div>
             </div>

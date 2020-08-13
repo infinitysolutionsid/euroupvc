@@ -134,7 +134,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
                     </div>
                     <div class="col-lg-4">
                         <div class="text-box hover-effect" style="height: 330px;">
-                            <a href="#"> <i class="fas fa-tree"></i>
+                            <a href="#"> <i class="fas fa-tools"></i>
                                 <h3>Bebas Perawatan</h3>
                                 <p>Bahan uPVC kami tidak memerlukan perawatan untuk seumur hidup.</p>
                             </a>

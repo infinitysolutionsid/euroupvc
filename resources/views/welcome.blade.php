@@ -75,7 +75,8 @@
                         <ul class="top-menu">
                             <li><a href="/about-us">About us</a></li>
                             <li><a href="#"><span><i class="fas fa-phone-alt"></i>+62 822 6767 3000</span></a></li>
-                            <li><a href="https://wa.link/02oq01" target="_blank"><span><i class="far fa-comments"></i>
+                            <li><a href="https://api.whatsapp.com/send?phone=6282267673000&text=Halo%20Euro%20uPVC%2C%20saya%20tertarik%20dengan%20produk%20upvc%20milik%20Euro%20uPVC..%20Boleh%20ngobrol%3F"
+                                    target="_blank"><span><i class="far fa-comments"></i>
                                         Live
                                         Chat</span></a></li>
                             <li><a href="/contact-us" target="_blank"><span><i class="far fa-question-circle"></i>

@@ -1,7 +1,8 @@
 @extends('welcome')
 @section('titlepage','Euro UPVC - Sliding Door System Catalog')
 <?php $y = Date('Y'); ?>
-@section('deschomepage','Sliding Door System Euro uPVC')
+@section('deschomepage','Katalog Sliding Door System milik Euro uPVC memiliki banyak kelebihan, salah satunya adalah
+jaminan garansi yang memiliki rentang waktu garansi yang lama. Tunggu apa lagi? Langsung konsultasi dengan kami.')
 @section('content')
 <section id="page-title" class="page-title-left text-light"
     data-bg-parallax="{!!asset('images/katalog/sliding-door.jpg')!!}">
@@ -124,4 +125,24 @@
         </div>
     </div>
 </section>
+<div style="background-image:url({!!asset('images/katalog/calltoac.png')!!})"
+    class="call-to-action p-t-100 p-b-100 background-image mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h3 class="text-light">
+                    Tertarik dengan produk pintu geser uPVC kami? Butuh konsultasi untuk mempercantik rumah anda?
+                </h3>
+                <p class="text-light">
+                    Jangan ragu / segan untuk keperluan jendela ataupun pintu rumah anda. Kami tidak hanya memberikan
+                    yang terbaik bagi anda, kami juga memberikan jaminan dan kekuatan untuk kenyamanan rumah anda.
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <a href="https://api.whatsapp.com/send?phone=6282267673000&text=Halo%20Euro%20uPVC%2C%20saya%20tertarik%20dengan%20produk%20Sliding%20Door%20System%20uPVC%20milik%20Euro%20uPVC..%20Boleh%20ngobrol%3F"
+                    class="btn btn-light btn-outline btn-block btn-lg">Hubungi Kami Sekarang</a>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

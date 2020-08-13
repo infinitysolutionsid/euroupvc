@@ -74,6 +74,7 @@ Route::prefix('catalog')->group(function () {
         return view('homepage.catalog.slidingdoorsystem', ['slidingdoor' => $slidingdoor]);
     });
 });
+
 Route::prefix('product/details')->group(function () {
     Route::get('/{product_name}', 'HomepageControler@productdetails');
 });

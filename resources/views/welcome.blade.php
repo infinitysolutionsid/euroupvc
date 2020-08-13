@@ -123,16 +123,23 @@
                                     <li><a href="/projects">Projects</a></li>
                                     <li class="dropdown"> <a href="#">Product</a>
                                         <ul class="dropdown-menu">
-                                            @foreach (App\productsdb::orderBy('created_at','DESC')->get() as $product)
+                                            {{-- @foreach (App\productsdb::orderBy('created_at','DESC')->get() as $product)
                                             <li><a
                                                     href="/products/details/{{$product->product_name}}">{{$product->product_name}}</a>
-                                            </li>
-                                            {{-- {{dd($product)}} --}}
-                                            @endforeach
-                                        </ul>
                                     </li>
-                                    <li><a href="#">Career</a></li>
-                                    <li><a href="/contact-us">Contact Us</a></li>
+                                    @endforeach --}}
+                                    <li><a href="/catalog/door-system">Door System</a>
+                                    </li>
+                                    <li><a href="/catalog/sliding-door-system">Sliding Door System</a>
+                                    </li>
+                                    <li><a href="/catalog/window-system">Window System</a>
+                                    </li>
+                                    <li><a href="/catalog/sliding-window-system">Sliding Window System</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="/contact-us">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>

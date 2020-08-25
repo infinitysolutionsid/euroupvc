@@ -62,12 +62,14 @@
                     <li class="@yield('activeannounce')"><a href="/admin/announcement"><i class="ti-bell"></i>
                             Announcement</a></li>
                     @endif
+                    @if($getRole=='Admin')
                     <li class="@yield('activeuser')"><a class="sidebar-sub-toggle"><i class="ti-lock"></i> Credentials
                             <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="/admin/user">User Managements</a></li>
                         </ul>
                     </li>
+                    @endif
                     <li class="label">Store Needs</li>
                     <li class="@yield('activeblog')"><a href="/admin/blog"><i class="ti-folder"></i> Project Blog </a>
                     </li>

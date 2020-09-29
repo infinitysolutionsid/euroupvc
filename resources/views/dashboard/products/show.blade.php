@@ -40,7 +40,7 @@
                                         </button>
                                     </div>
                                     <form id="productnew" action="/admin/products/addnewproduct" method="POST">
-                                        @csrf
+                                        {{ csrf_field() }}
                                         <div class="modal-body">
                                             <div class="form-row">
                                                 <div class="col">
@@ -54,8 +54,8 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <textarea name="description" id="" cols="30" rows="10"
-                                                            class="form-control" placeholder="Deskripsi Produk"
-                                                            required></textarea>
+                                                            class="form-control"
+                                                            placeholder="Deskripsi Produk"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -115,7 +115,8 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form action="/admin/products/update/{{$products->id}}" method="POST">
+                                            <form id="kategorinew" action="/admin/products/update/{{$products->id}}"
+                                                method="POST">
                                                 @csrf
                                                 <div class="modal-body">
                                                     <div class="form-row">
@@ -138,7 +139,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    <button form="kategorinew" type="submit"
+                                                        class="btn btn-primary">Save changes</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -205,7 +207,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form id="kategorinew" action="/admin/products/addnewkategori" method="POST">
+                                    <form action="/admin/products/addnewkategorial" method="POST">
                                         @csrf
                                         <div class="modal-body">
                                             <div class="form-row">
@@ -240,7 +242,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" form="kategorinew" class="btn btn-primary">Save
+                                            <button type="submit" class="btn btn-primary">Save
                                                 changes</button>
                                         </div>
                                     </form>
@@ -256,6 +258,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Kategori Produk</th>
+                                    <th>Produk Induk</th>
                                     <th>Act.</th>
                                 </tr>
                             </thead>
@@ -266,6 +269,7 @@
                                 <tr>
                                     <th scope="row">{{$no++}}</th>
                                     <td>{{$kategori->nama_kategori}}</td>
+                                    <td>{{$kategori->product_name}}</td>
                                     <td>
                                         <a href="" data-toggle="modal" data-target="#viewkategori{{$kategori->id}}"
                                             class="btn btn-secondary btn-rounded">
@@ -307,7 +311,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <!-- Modal update products -->
                                 <div class="modal fade" id="editkategori{{$kategori->id}}" tabindex="-1" role="dialog"
                                     aria-labelledby="editproducts{{$kategori->id}}" aria-hidden="true">
@@ -378,27 +381,60 @@
                         </div>
                         <div class="col-lg-6 text-right">
                             <button class="btn btn-primary" type="button" data-toggle="modal"
-                                data-target="#addnewproduk">Tambah produk</button>
+                                data-target="#addnewitemproduk">Tambah item produk</button>
                         </div>
                         <!-- Modal Tambah products -->
-                        <div class="modal fade" id="addnewproduk" tabindex="-1" role="dialog"
-                            aria-labelledby="addnewproduk" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal fade" id="addnewitemproduk" tabindex="-1" role="dialog"
+                            aria-labelledby="addnewitemproduk" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addnewproduk">Tambah Produk Baru</h5>
+                                        <h5 class="modal-title" id="addnewitemproduk">Tambah Item Produk Baru</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form id="productnew" action="/admin/products/addnewproduk" method="POST">
+                                    <form id="productnew" action="/admin/products/addnewitemproduk"
+                                        enctype="multipart/form-data" method="POST">
                                         @csrf
                                         <div class="modal-body">
                                             <div class="form-row">
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <input type="text" placeholder="Nama Produk" name="nama_produk"
                                                             id="name" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <select name="katalog_id" class="custom-select form-control"
+                                                            id="" required>
+                                                            <option selected>Pilih katalog item produk:</option>
+                                                            @foreach ($katalogItem as $kataIt)
+                                                            <option value="{{$kataIt->id}}">{{$kataIt->product_name}}
+                                                            </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <select name="kategori_id" class="custom-select form-control"
+                                                            id="" required>
+                                                            <option selected>Pilih kategori item produk:</option>
+                                                            @foreach ($kategoriItem as $katIt)
+                                                            <option value="{{$katIt->id}}">{{$katIt->nama_kategori}}
+                                                            </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <small class="muted-text">Masukkan gambar pertama:</small>
+                                                        <input type="file" name="fileimg" class="form-control" id="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -413,7 +449,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" form="productnew" class="btn btn-primary">Save
+                                            <button type="submit" class="btn btn-primary">Save
                                                 changes</button>
                                         </div>
                                     </form>
@@ -428,54 +464,60 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
+                                    <th style="width: 100px;">Preview Item</th>
+                                    <th>Nama Item</th>
+                                    <th>Kategori</th>
                                     <th>Act.</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if(!$produk->isEmpty())
+                                @if(!$itemproduk->isEmpty())
                                 <?php $no = 1; ?>
-                                @foreach ($produk as $produk)
+                                @foreach ($itemproduk as $itemproduk)
                                 <tr>
                                     <th scope="row">{{$no++}}</th>
-                                    <td>{{$produk->nama_produk}}</td>
+                                    <td><img src="{!!asset('media/product/item/'.$itemproduk->fileimg)!!}"
+                                            alt="{!!$itemproduk->nama_item!!}" class="imgprev"></td>
+                                    <td>{{$itemproduk->nama_item}}</td>
+                                    <td>{{$itemproduk->nama_kategori}}</td>
                                     <td>
-                                        <a href="" data-toggle="modal" data-target="#viewproducts{{$produk->id}}"
+                                        <a href="" data-toggle="modal" data-target="#viewproducts{{$itemproduk->id}}"
                                             class="btn btn-secondary btn-rounded">
                                             <span style="color:;"><i class="fas fa-question"></i></span>
                                         </a>
-                                        <a href="" data-toggle="modal" data-target="#editproducts{{$produk->id}}"
+                                        <a href="" data-toggle="modal" data-target="#editproducts{{$itemproduk->id}}"
                                             class="btn btn-warning btn-rounded">
                                             <span><i class="fas fa-pen-nib"></i></span>
                                         </a>
-                                        <a href="/admin/products/trash/{{$produk->id}}"
+                                        <a href="/admin/products/itemtrash/{{$itemproduk->id}}"
                                             class="btn btn-danger btn-rounded">
                                             <span><i class="fas fa-trash"></i></span>
                                         </a>
                                     </td>
                                 </tr>
                                 <!-- Modal update products -->
-                                <div class="modal fade" id="editproducts{{$produk->id}}" tabindex="-1" role="dialog"
-                                    aria-labelledby="editproducts{{$produk->id}}" aria-hidden="true">
+                                <div class="modal fade" id="editproducts{{$itemproduk->id}}" tabindex="-1" role="dialog"
+                                    aria-labelledby="editproducts{{$itemproduk->id}}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="editproducts{{$produk->id}}">Update produk
-                                                    {{$produk->nama_produk}}?</h5>
+                                                <h5 class="modal-title" id="editproducts{{$itemproduk->id}}">Update
+                                                    produk
+                                                    {{$itemproduk->nama_item}}?</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form action="/admin/products/update/{{$produk->id}}" method="POST">
+                                            <form action="/admin/products/update/{{$itemproduk->id}}" method="POST">
                                                 @csrf
                                                 <div class="modal-body">
                                                     <div class="form-row">
                                                         <div class="col">
                                                             <div class="form-group">
                                                                 <input type="text" placeholder="Nama Produk"
-                                                                    name="nama_produk" id="name" class="form-control"
-                                                                    required value="{{$produk->nama_produk}}">
+                                                                    name="nama_item" id="name" class="form-control"
+                                                                    required value="{{$itemproduk->nama_item}}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -484,7 +526,7 @@
                                                             <div class="form-group">
                                                                 <textarea name="description" id="" cols="30" rows="10"
                                                                     class="form-control" placeholder="Deskripsi Produk"
-                                                                    required>{{$produk->description}}</textarea>
+                                                                    required>{{$itemproduk->description}}</textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -497,13 +539,13 @@
                                     </div>
                                 </div>
                                 <!-- Modal view products -->
-                                <div class="modal fade" id="viewproducts{{$produk->id}}" tabindex="-1" role="dialog"
-                                    aria-labelledby="viewproducts{{$produk->id}}" aria-hidden="true">
+                                <div class="modal fade" id="viewproducts{{$itemproduk->id}}" tabindex="-1" role="dialog"
+                                    aria-labelledby="viewproducts{{$itemproduk->id}}" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="view{{$produk->id}}">View data produk
-                                                    {{$produk->nama_produk}}</h5>
+                                                <h5 class="modal-title" id="view{{$itemproduk->id}}">View data produk
+                                                    {{$itemproduk->nama_item}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -513,8 +555,8 @@
                                                 <div>
                                                     <h5>Informasi umum</h5>
                                                     <p>
-                                                        Nama Produk: {{$produk->nama_produk}} <br>
-                                                        Deskripsi Produk: <br>{!!$produk->description!!} <br>
+                                                        Nama Produk: {{$itemproduk->nama_item}} <br>
+                                                        Deskripsi Produk: <br>{!!$itemproduk->description!!} <br>
                                                     </p>
                                                 </div>
                                             </div>
@@ -524,7 +566,7 @@
                                 @endforeach
                                 @else
                                 <tr>
-                                    <td colspan="3" class="text-center">No Data Founded!</td>
+                                    <td colspan="4" class="text-center">No Data Founded!</td>
                                 </tr>
                                 @endif
                             </tbody>

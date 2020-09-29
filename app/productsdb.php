@@ -9,6 +9,6 @@ class productsdb extends Model
     protected $table = 'productsdbs';
     protected $fillable = [
         'product_name',
-        'description',
+        'description', 'link',
     ];
 }

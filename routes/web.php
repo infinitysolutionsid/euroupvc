@@ -27,6 +27,7 @@ Route::get('/pesan', function () {
 Route::get('/about-us', function () {
     return view('homepage.aboutus');
 });
+Route::get('/gallery', 'HomepageController@galleryview');
 Route::get('/dash', function () {
     return view('dashboard');
 });
@@ -110,9 +111,10 @@ Route::group(['prefix' => 'admin/user', 'middleware' => 'isLogin'], function () 
 });
 Route::group(['prefix' => 'admin/products', 'middleware' => 'isLogin'], function () {
     Route::post('/addnewproduct', 'DashboardController@prosesaddproduct');
-    Route::post('/addnewkategori', 'DashboardController@prosesaddkategori');
-    Route::post('/addnewproduk', 'DashboardController@prosesadditem');
+    Route::post('/addnewkategorial', 'DashboardController@prosesaddkategori');
+    Route::post('/addnewitemproduk', 'DashboardController@prosesadditem');
     Route::get('/trash/{id}', 'DashboardController@trashproduct');
+    Route::get('/itemtrash/{id}', 'DashboardController@itemtrashproduct');
     Route::post('/update/{id}', 'DashboardController@updateproduct');
 });
 Route::group(['prefix' => 'admin/blog', 'middleware' => 'isLogin'], function () {

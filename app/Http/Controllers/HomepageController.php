@@ -47,4 +47,12 @@ class HomepageController extends Controller
         $blog = blogdb::orderBy('created_at', 'DESC')->paginate(9);
         return view('homepage.projects', ['blog' => $blog]);
     }
+    public function galleryview()
+    {
+        $gallery = DB::table('gallerydbs')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->get();
+        return view('homepage.gallery.index', ['gallery' => $gallery]);
+        // dd($gallery);
+    }
 }

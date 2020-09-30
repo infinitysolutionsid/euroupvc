@@ -92,33 +92,76 @@
                                 <tr>
                                     <th>#</th>
                                     <th style="width: 200px;">Preview</th>
-                                    <th>Judul Foto</th>
-                                    <th>Kategori</th>
+                                    <th>Keterangan Foto</th>
                                     <th>Act.</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @if(!$gal->isEmpty())
-                                <?php $no = 1; ?>
+                                <?php $no = 1; $getRole = session()->get('role'); ?>
                                 @foreach ($galp as $gal)
                                 <tr>
                                     <th scope="row">{{$no++}}</th>
-                                    <td><img src="{!!asset('media/gallery/'.$gal->img)!!}"
-                                            alt="{{$gal->judul_foto}} - {{$gal->img}}"></td>
+                                    <td><a href="" data-toggle="modal" data-target="#viewphotos{{$gal->id}}"><img
+                                                src="{!!asset('media/gallery/'.$gal->img)!!}"
+                                                alt="{{$gal->judul_foto}} - {{$gal->img}}"></a></td>
                                     <td>
-                                        {{$gal->judul_foto}}
-                                    </td>
-                                    <td>{!!$gal->product_name!!}
+                                        <p style="margin-bottom: -15px;">
+                                            <strong><a href="" style="color: #000;" data-toggle="modal"
+                                                    data-target="#viewphotos{{$gal->id}}">{{$gal->judul_foto}}</a></strong>
+                                        </p>
+                                        <p style="margin-bottom: -15px;">
+                                            Kategori: {!!$gal->product_name!!}
+                                        </p>
+                                        <small class="text-muted">Uploaded by:
+                                            {{$gal->created_by}} |</small>
+                                        <small class="text-muted">Created at:
+                                            {{$gal->created_at}}</small>
+                                        @if($gal->status=='approved')
+                                        <div>
+                                            <p style="margin-bottom: -15px;">
+                                                <span style="color:green;"><i class="fa fa-circle"></i> Published</span>
+                                            </p>
+                                            <small class="text-muted">This image has already be published, see on our <a
+                                                    href="/gallery"><strong>gallery homepage</strong></a></small>
+                                        </div>
+                                        @elseif($gal->status=='waiting')
+                                        <div>
+                                            <p style="margin-bottom:-15px;">
+                                                <span style="color:rgb(219, 158, 25);"><i
+                                                        class="fas fa-spinner fa-pulse"></i> In
+                                                    Review...</span>
+                                            </p>
+                                            <small class="text-muted">Hi {{session()->get('name')}}, this image is
+                                                already uploaded and waiting
+                                                for approving from your head. Thank you for your patience.</small>
+                                        </div>
+                                        @else
+                                        <div>
+                                            <p style="margin-bottom:-15px;">
+                                                <span style="color:red;"><i class="fa fa-circle"></i> Declined</span>
+                                            </p>
+                                            <small class="text-muted">Your image has been declined, maybe somethings is
+                                                missed.</small>
+                                        </div>
+                                        @endif
                                     </td>
                                     <td>
-                                        <a href="" data-toggle="modal" data-target="#viewphotos{{$gal->id}}"
-                                            class="btn btn-secondary btn-rounded">
-                                            <span style="color:;"><i class="fas fa-eye"></i></span>
+                                        @if($getRole=='Directur' || $getRole=='Developer' || $getRole=='Head')
+                                        <a href="/admin/gallery/verify/{!!$gal->id!!}"
+                                            class="btn btn-success btn-rounded">
+                                            <span><i class="fas fa-check"></i></span>
                                         </a>
+                                        <a href="/admin/gallery/declined/{!!$gal->id!!}"
+                                            class="btn btn-danger btn-rounded">
+                                            <span><i class="fas fa-times"></i></span>
+                                        </a>
+                                        @else
                                         <a href="/admin/gallery/trash/{!!$gal->id!!}"
                                             class="btn btn-danger btn-rounded">
                                             <span><i class="fas fa-trash"></i></span>
                                         </a>
+                                        @endif
                                     </td>
                                 </tr>
                                 {{-- Modal view user --}}
@@ -129,7 +172,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="view{{$gal->id}}">View photos
-                                                    {{$gal->judul_foto}}</h5>
+                                                    {{$gal->judul_foto}} - {{$gal->img}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -142,11 +185,6 @@
                                                             <img class="img-fluid"
                                                                 src="{!!asset('media/gallery/'.$gal->img)!!}"
                                                                 alt="{{$gal->judul_foto}} - {{$gal->img}}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 text-left">
-                                                        <div class="text-left">
-                                                            <p>{{$gal->judul_foto}} - {{$gal->img}}</p>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -186,8 +186,11 @@ class DashboardController extends Controller
             $filename = time() . '.' . $lamp->getClientOriginalExtension();
             $request->file('img')->move('media/gallery/', $filename);
             $gal->img = $filename;
+            $gal->status = 'waiting';
+            $gal->created_by = session()->get('username');
             $gal->save();
         }
+        // dd($gal);
         return back()->with('selamat', 'Foto kamu berhasil ditambahkan didalam galeri!');
     }
     public function trashgallery($id)
@@ -201,6 +204,28 @@ class DashboardController extends Controller
                 return back()->with('selamat', 'Data foto dalam galeri ini berhasil dihapus.');
             }
         }
+    }
+    public function verifygallery(Request $request, $id)
+    {
+        $gal = gallerydb::find($id);
+        $gal->update($request->all());
+        // dd($user);
+        $gal->status = 'approved';
+        $gal->approved_by = session()->get('username');
+        $gal->updated_by = session()->get('username');
+        $gal->save();
+        return redirect()->back()->with('selamat', 'Data foto dalam galeri ini berhasil diverifikasi!');
+    }
+    public function declinedgallery(Request $request, $id)
+    {
+        $gal = gallerydb::find($id);
+        $gal->update($request->all());
+        // dd($user);
+        $gal->status = 'declined';
+        $gal->approved_by = session()->get('username');
+        $gal->updated_by = session()->get('username');
+        $gal->save();
+        return redirect()->back()->with('selamat', 'Data foto dalam galeri ini diupdate menjadi status batal!');
     }
     // PRODUCTS SECTION
     public function showproducts()

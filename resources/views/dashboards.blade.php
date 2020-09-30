@@ -62,7 +62,7 @@
                     <li class="@yield('activeannounce')"><a href="/admin/announcement"><i class="ti-bell"></i>
                             Announcement</a></li>
                     @endif
-                    @if($getRole=='Admin')
+                    @if($getRole=='Admin' || $getRole=='Developer')
                     <li class="@yield('activeuser')"><a class="sidebar-sub-toggle"><i class="ti-lock"></i> Credentials
                             <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>

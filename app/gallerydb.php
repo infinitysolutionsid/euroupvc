@@ -10,6 +10,6 @@ class gallerydb extends Model
     protected $fillable = [
         'product_id',
         'judul_foto',
-        'img',
+        'img', 'status', 'created_by', 'updated_by', 'approved_by',
     ];
 }

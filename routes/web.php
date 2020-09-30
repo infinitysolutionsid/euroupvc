@@ -125,6 +125,8 @@ Route::group(['prefix' => 'admin/blog', 'middleware' => 'isLogin'], function () 
 Route::group(['prefix' => 'admin/gallery', 'middleware' => 'isLogin'], function () {
     Route::post('/addnewgallery', 'DashboardController@prosesaddgallery');
     Route::get('/trash/{id}', 'DashboardController@trashgallery');
+    Route::get('/verify/{id}', 'DashboardController@verifygallery');
+    Route::get('/declined/{id}', 'DashboardController@declinedgallery');
 });
 Route::group(['prefix' => 'admin/partner', 'middleware' => 'isLogin'], function () {
     Route::post('/addnewpartner', 'DashboardController@prosesaddpartner');

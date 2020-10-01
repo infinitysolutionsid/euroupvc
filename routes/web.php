@@ -44,6 +44,7 @@ Route::get('logout', function () {
 Route::prefix('catalog')->group(function () {
     Route::get('/door-system', function () {
         $door = DB::table('gallerydbs')
+            ->where('gallerydbs.status', '=', 'approved')
             ->where('gallerydbs.product_id', '=', '1')
             ->select('gallerydbs.*')
             ->orderBy('gallerydbs.created_at', 'DESC')
@@ -52,6 +53,7 @@ Route::prefix('catalog')->group(function () {
     });
     Route::get('/window-system', function () {
         $window = DB::table('gallerydbs')
+            ->where('gallerydbs.status', '=', 'approved')
             ->where('gallerydbs.product_id', '=', '3')
             ->select('gallerydbs.*')
             ->orderBy('gallerydbs.created_at', 'DESC')
@@ -60,6 +62,7 @@ Route::prefix('catalog')->group(function () {
     });
     Route::get('/sliding-window-system', function () {
         $slidingwin = DB::table('gallerydbs')
+            ->where('gallerydbs.status', '=', 'approved')
             ->where('gallerydbs.product_id', '=', '4')
             ->select('gallerydbs.*')
             ->orderBy('gallerydbs.created_at', 'DESC')
@@ -68,6 +71,7 @@ Route::prefix('catalog')->group(function () {
     });
     Route::get('/sliding-door-system', function () {
         $slidingdoor = DB::table('gallerydbs')
+            ->where('gallerydbs.status', '=', 'approved')
             ->where('gallerydbs.product_id', '=', '2')
             ->select('gallerydbs.*')
             ->orderBy('gallerydbs.created_at', 'DESC')

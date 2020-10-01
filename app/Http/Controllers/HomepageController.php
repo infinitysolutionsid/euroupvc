@@ -13,6 +13,7 @@ class HomepageController extends Controller
     {
         $blog = blogdb::orderBy('created_at', 'DESC')->limit(3)->get();
         $galp = DB::table('gallerydbs')
+            ->where('gallerydbs.status', '=', 'approved')
             ->join('productsdbs', 'gallerydbs.product_id', '=', 'productsdbs.id')
             ->select('gallerydbs.*', 'productsdbs.*')
             ->limit(8)
@@ -50,6 +51,7 @@ class HomepageController extends Controller
     public function galleryview()
     {
         $gallery = DB::table('gallerydbs')
+            ->where('gallerydbs.status', '=', 'approved')
             ->orderBy('gallerydbs.created_at', 'DESC')
             ->get();
         return view('homepage.gallery.index', ['gallery' => $gallery]);

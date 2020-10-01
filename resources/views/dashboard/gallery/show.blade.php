@@ -114,8 +114,10 @@
                                             Kategori: {!!$gal->product_name!!}
                                         </p>
                                         <small class="text-muted">Uploaded by:
-                                            {{$gal->created_by}} |</small>
-                                        <small class="text-muted">Created at:
+                                            {{$gal->created_by}} </small>@if($gal->status=='approved')<small
+                                            class="text-muted">| Approved by:
+                                            {{$gal->approved_by}}</small>@else @endif
+                                        <small class="text-muted">| Created at:
                                             {{$gal->created_at}}</small>
                                         @if($gal->status=='approved')
                                         <div>

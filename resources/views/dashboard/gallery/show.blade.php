@@ -150,10 +150,18 @@
                                     </td>
                                     <td>
                                         @if($getRole=='Directur' || $getRole=='Developer' || $getRole=='Head')
+                                        @if($gal->status=='waiting')
                                         <a href="/admin/gallery/verify/{!!$gal->id!!}"
                                             class="btn btn-success btn-rounded">
                                             <span><i class="fas fa-check"></i></span>
                                         </a>
+                                        @elseif($gal->status=='approved')
+                                        @else
+                                        <a href="/admin/gallery/verify/{!!$gal->id!!}"
+                                            class="btn btn-success btn-rounded">
+                                            <span><i class="fas fa-check"></i></span>
+                                        </a>
+                                        @endif
                                         <a href="/admin/gallery/declined/{!!$gal->id!!}"
                                             class="btn btn-danger btn-rounded">
                                             <span><i class="fas fa-times"></i></span>

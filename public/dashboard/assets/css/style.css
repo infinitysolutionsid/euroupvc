@@ -5374,3 +5374,8 @@ only screen and (min-resolution: 2dppx) {
     height: 100px;
     object-fit: cover;
 }
+
+.table-hover .colordashboard {
+    width: 30px;
+    height: 30px;
+}

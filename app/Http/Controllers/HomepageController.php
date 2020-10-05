@@ -27,7 +27,11 @@ class HomepageController extends Controller
             ->orderBy('partners.id', 'ASC')
             ->select('partners.*')
             ->get();
-        return view('homepage.index', ['blog' => $blog, 'galp' => $galp, 'product' => $product, 'partner' => $partner]);
+        $color = DB::table('colorproducts')
+            ->orderBy('colorproducts.color_name', 'ASC')
+            ->select('colorproducts.*')
+            ->get();
+        return view('homepage.index', ['blog' => $blog, 'galp' => $galp, 'product' => $product, 'partner' => $partner, 'color' => $color]);
     }
     public function blogview($judul)
     {

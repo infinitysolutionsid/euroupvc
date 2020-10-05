@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\admindb;
 use App\announce;
 use App\blogdb;
+use App\colorproduct;
 use App\Contact;
 use App\email;
 use App\gallerydb;
@@ -252,9 +253,13 @@ class DashboardController extends Controller
             ->orderBy('itemproduks.nama_item', 'ASC')
             ->select('kategoris.*', 'itemproduks.*', 'kategoris.description as descriptionItem')
             ->get();
+        $color = DB::table('colorproducts')
+            ->orderBy('colorproducts.created_at', 'DESC')
+            ->select('colorproducts.*')
+            ->get();
         $kategoriItem = kategori::all();
         $katalogItem = productsdb::all();
-        return view('dashboard.products.show', ['products' => $products, 'kategori' => $kategori, 'produk' => $produk, 'productget' => $productget, 'itemproduk' => $itemproduk, 'kategoriItem' => $kategoriItem, 'katalogItem' => $katalogItem]);
+        return view('dashboard.products.show', ['products' => $products, 'kategori' => $kategori, 'produk' => $produk, 'productget' => $productget, 'itemproduk' => $itemproduk, 'kategoriItem' => $kategoriItem, 'katalogItem' => $katalogItem, 'color' => $color]);
     }
     // // // Kategori Section
     public function prosesaddkategori(Request $request)
@@ -291,6 +296,37 @@ class DashboardController extends Controller
         // dd($request->all());
         return redirect('/admin/products')->with('selamat', 'Data item produk berhasil ditambahkan');
     }
+    public function prosesaddcolor(Request $request)
+    {
+        $color = new colorproduct();
+        $color->color_name = $request->color_name;
+        if (!$request->hasFile('file_color')) {
+            $color->save();
+        } else {
+            $lamp = $request->file('file_color');
+            $filename = time() . '.' . $lamp->getClientOriginalExtension();
+            $request->file('file_color')->move('media/product/color/', $filename);
+            $color->file_color = $filename;
+            $color->created_by = session()->get('username');
+            $color->updated_by = session()->get('username');
+            $color->save();
+        }
+        return redirect('/admin/products')->with('selamat', 'Data warna produk berhasil ditambahkan');
+        // dd($color);
+    }
+    public function trashcolor($id)
+    {
+        $color = colorproduct::find($id);
+        // dd($user);
+        if ($color) {
+            if ($color->delete()) {
+                DB::statement('ALTER TABLE colorproducts AUTO_INCREMENT = ' . (count(colorproduct::all()) + 1) . ';');
+
+                return back()->with('selamat', 'Data Warna produk berhasil dihapus.');
+            }
+        }
+    }
+
     // End Item Section
     public function prosesaddproduct(Request $request)
     {

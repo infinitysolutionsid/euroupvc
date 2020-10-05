@@ -372,7 +372,7 @@
     {{-- Item produk --}}
     <div class="row">
         {{-- Item Produk Management --}}
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-title">
                     <div class="row">
@@ -449,7 +449,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Save
+                                            <button form="productnew" type="submit" class="btn btn-primary">Save
                                                 changes</button>
                                         </div>
                                     </form>
@@ -567,6 +567,127 @@
                                 @else
                                 <tr>
                                     <td colspan="4" class="text-center">No Data Founded!</td>
+                                </tr>
+                                @endif
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-title">
+                    <div class="row">
+                        <div class="col-lg-6 text-left">
+                            Color Product Managements
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                data-target="#addnewcolor">Tambah Warna</button>
+                        </div>
+                        <!-- Modal Tambah products -->
+                        <div class="modal fade" id="addnewcolor" tabindex="-1" role="dialog"
+                            aria-labelledby="addnewcolor" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addnewcolor">Tambah Warna Kategori Produk</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="/admin/products/addnewcolor" method="POST"
+                                        enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                        <div class="modal-body">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Nama Warna Produknya"
+                                                            name="color_name" id="name" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="co">
+                                                    <div class="form-group">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <input type="file" name="file_color"
+                                                                    class="form-control" id="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Save
+                                                changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover display">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Informasi Warna</th>
+                                    <th>Act.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(!$color->isEmpty())
+                                <?php $no = 1; ?>
+                                @foreach ($color as $color)
+                                <tr>
+                                    <th scope="row">{{$no++}}</th>
+                                    <td>
+                                        <img class="colordashboard"
+                                            src="{!!asset('media/product/color/'.$color->file_color)!!}"
+                                            alt="{!!$color->color_name!!}">
+                                        <strong>{{$color->color_name}}</strong>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/products/trashcolor/{{$color->id}}"
+                                            class="btn btn-danger btn-rounded">
+                                            <span><i class="fas fa-trash"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Modal view products -->
+                                <div class="modal fade" id="viewcolor{{$color->id}}" tabindex="-1" role="dialog"
+                                    aria-labelledby="viewcolor{{$color->id}}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="view{{$color->id}}">View data warna produk
+                                                    {{$color->color_name}}</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                @endforeach
+                                @else
+                                <tr>
+                                    <td colspan="3" class="text-center">No Data Founded!</td>
                                 </tr>
                                 @endif
                             </tbody>

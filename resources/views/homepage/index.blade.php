@@ -9,7 +9,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
     <div class="slide" style="background-image:url('homepages/real-estate/images/1.jpg');">
         <div class="container">
             <div class="slide-captions">
-                <h3 class="text-uppercase text-medium">Percantik rumahmu <br>dengan upvc <br>
+                <h3 class="text-uppercase text-medium">Perindah rumahmu <br>dengan upvc <br>
                     pilihan terbaik.
                 </h3>
                 <p class="lead">EuroUPVC memiliki motif yang beragam
@@ -46,60 +46,21 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
             </div>
         </div>
         <div class="row justify-content-center imgvarious m-t-50">
+            @if(!$color->isEmpty())
+            @foreach ($color as $color)
             <div class="col-lg-2 text-center">
-                <img src="images/material/white.png" alt="Warna variasi produk EURO uPVC - White High Anti UV Various">
-                <h4>White High Anti UV</h4>
+                <a href="#">
+                    <img src="{!!asset('media/product/color/'.$color->file_color)!!}"
+                        alt="Warna variasi produk EURO uPVC - {{$color->color_name}}">
+                    <h5>{{$color->color_name}}</h5>
+                </a>
             </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/black.png" alt="Warna variasi produk EURO uPVC - Black ASA Various">
-                <h4>Black ASA</h4>
+            @endforeach
+            @else
+            <div class="col-lg-12 text-center">
+                <h4>No data color founded!</h4>
             </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/darkbrown.png" alt="Warna variasi produk EURO uPVC - Dark Brown ASA Various">
-                <h4>Dark Brown ASA</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/goldenoak.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Golden Oak Various">
-                <h4>Laminated Golden Oak</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/wallnut.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Wallnutt Various">
-                <h4>Laminated Wallnut</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/darkoak.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Dark Oak Various">
-                <h4>Laminated Dark Oak</h4>
-            </div>
-        </div>
-        <div class="row justify-content-center m-t-50 imgvarious">
-            <div class="col-lg-2 text-center">
-                <img src="images/material/mahogani.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Mahogani Various">
-                <h4>Laminated Mahogani</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/vintageoak.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Vintage Oak Various">
-                <h4>Laminated Vintage Oak</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/naturaloak.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Natural Oak Various">
-                <h4>Laminated Natural Oak</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/lblack.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Sand Stone Black Various">
-                <h4>Laminated Sand Stone Black</h4>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="images/material/grey.png"
-                    alt="Warna variasi produk EURO uPVC - Laminated Anthracite Grey Various">
-                <h4>Laminated Anthracite Grey</h4>
-            </div>
+            @endif
         </div>
     </div>
 </section>

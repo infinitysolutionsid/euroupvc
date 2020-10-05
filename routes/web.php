@@ -117,7 +117,9 @@ Route::group(['prefix' => 'admin/products', 'middleware' => 'isLogin'], function
     Route::post('/addnewproduct', 'DashboardController@prosesaddproduct');
     Route::post('/addnewkategorial', 'DashboardController@prosesaddkategori');
     Route::post('/addnewitemproduk', 'DashboardController@prosesadditem');
+    Route::post('/addnewcolor', 'DashboardController@prosesaddcolor');
     Route::get('/trash/{id}', 'DashboardController@trashproduct');
+    Route::get('/trashcolor/{id}', 'DashboardController@trashcolor');
     Route::get('/itemtrash/{id}', 'DashboardController@itemtrashproduct');
     Route::post('/update/{id}', 'DashboardController@updateproduct');
 });

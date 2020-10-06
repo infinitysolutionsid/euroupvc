@@ -61,4 +61,18 @@ class HomepageController extends Controller
         return view('homepage.gallery.index', ['gallery' => $gallery]);
         // dd($gallery);
     }
+    public function colorproduct($id)
+    {
+        $gallery = DB::table('colorproducts')
+            ->join('gallerydbs', 'colorproducts.id', '=', 'gallerydbs.color_id')
+            ->where('colorproducts.id', '=', $id)
+            ->select('colorproducts.color_name', 'colorproducts.id', 'gallerydbs.*')
+            ->orderBy('gallerydbs.created_at', 'DESC')
+            ->get();
+        $color = DB::table('colorproducts')
+            ->where('colorproducts.id', '=', $id)
+            ->first();
+        // dd($gallery);
+        return view('homepage.gallery.color', ['gallery' => $gallery, 'color' => $color]);
+    }
 }

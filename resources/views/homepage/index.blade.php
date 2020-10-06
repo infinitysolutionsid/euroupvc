@@ -49,7 +49,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
             @if(!$color->isEmpty())
             @foreach ($color as $color)
             <div class="col-lg-2 text-center">
-                <a href="#">
+                <a href="/product/details/color/{{$color->id}}">
                     <img src="{!!asset('media/product/color/'.$color->file_color)!!}"
                         alt="Warna variasi produk EURO uPVC - {{$color->color_name}}">
                     <h5>{{$color->color_name}}</h5>

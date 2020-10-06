@@ -172,7 +172,11 @@ class DashboardController extends Controller
             ->select('gallerydbs.*', 'productsdbs.product_name', 'productsdbs.description')
             ->orderBy('gallerydbs.created_at', 'DESC')
             ->get();
-        return view('dashboard.gallery.show', ['product' => $product, 'gal' => $gal, 'galp' => $galp]);
+        $color = DB::table('colorproducts')
+            ->orderBy('colorproducts.color_name', 'ASC')
+            ->select('colorproducts.*')
+            ->get();
+        return view('dashboard.gallery.show', ['product' => $product, 'gal' => $gal, 'galp' => $galp, 'color' => $color]);
         // dd($galp);
     }
     public function prosesaddgallery(Request $request)
@@ -180,6 +184,7 @@ class DashboardController extends Controller
         $gal = new gallerydb();
         $gal->judul_foto = $request->judul_foto;
         $gal->product_id = $request->product_id;
+        $gal->color_id = $request->color_id;
         if (!$request->hasFile('img')) {
             $gal->save();
         } else {
@@ -189,6 +194,7 @@ class DashboardController extends Controller
             $gal->img = $filename;
             $gal->status = 'waiting';
             $gal->created_by = session()->get('username');
+            $gal->updated_by = session()->get('username');
             $gal->save();
         }
         // dd($gal);

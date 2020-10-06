@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('titlepage','Euro UPVC - Our Gallery')
+@section('titlepage','Euro UPVC - Product with '.$color->color_name.' color')
 <?php $y = Date('Y'); ?>
 @section('deschomepage','Dokumentasi dokumentasi kerja kami, akan kami selalu arsipkan di situs euroupvc.co.id kami.
 Silahkan dilihat lihat galeri kami ya.')
@@ -7,12 +7,12 @@ Silahkan dilihat lihat galeri kami ya.')
 <section id="page-content">
     <div class="container">
         <div class="page-title m-t-30">
-            <h1>Euro UPVC - Our Gallery</h1>
+            <h1>Euro UPVC - Product with <strong>{!!$color->color_name!!}</strong> color</h1>
             <div class="breadcrumb float-left">
                 <ul>
                     <li><a href="#">Home</a>
                     </li>
-                    <li class="active"><a href="/gallerry">Gallery</a>
+                    <li class="active"><a href="">Gallery</a>
                     </li>
                 </ul>
             </div>
@@ -27,12 +27,13 @@ Silahkan dilihat lihat galeri kami ya.')
             @foreach ($gallery as $item)
             <div class="grid-item">
                 <a class="image-hover-zoom" href="{!!asset('media/gallery/'.$item->img)!!}"
-                    data-lightbox="gallery-image"><img src="{!!asset('media/gallery/'.$item->img)!!}"
-                        alt="Produk galeri uPVC - EURO uPVC Medan"></a>
+                    data-lightbox="gallery-image"><img src="{!!asset('media/gallery/'.$item->img)!!}"></a>
             </div>
             @endforeach
             @else
-            <h3>no data founded!</h3>
+            <div class="col-lg-12 text-center">
+                <h4>No data color founded!</h4>
+            </div>
             @endif
         </div>
 

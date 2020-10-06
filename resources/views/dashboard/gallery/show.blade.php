@@ -42,6 +42,18 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <select name="color_id" id="" class="form-control custom-select">
+                                        <option>Pilih kategori warna</option>
+                                        @foreach ($color as $color)
+                                        <option value="{{$color->id}}">
+                                            {{$color->color_name}}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
@@ -155,17 +167,21 @@
                                             class="btn btn-success btn-rounded">
                                             <span><i class="fas fa-check"></i></span>
                                         </a>
-                                        @elseif($gal->status=='approved')
-                                        @else
-                                        <a href="/admin/gallery/verify/{!!$gal->id!!}"
-                                            class="btn btn-success btn-rounded">
-                                            <span><i class="fas fa-check"></i></span>
-                                        </a>
-                                        @endif
                                         <a href="/admin/gallery/declined/{!!$gal->id!!}"
                                             class="btn btn-danger btn-rounded">
                                             <span><i class="fas fa-times"></i></span>
                                         </a>
+                                        @elseif($gal->status=='declined')
+                                        <a href="/admin/gallery/verify/{!!$gal->id!!}"
+                                            class="btn btn-success btn-rounded">
+                                            <span><i class="fas fa-check"></i></span>
+                                        </a>
+                                        @elseif($gal->status=='approved')
+                                        <a href="/admin/gallery/declined/{!!$gal->id!!}"
+                                            class="btn btn-danger btn-rounded">
+                                            <span><i class="fas fa-times"></i></span>
+                                        </a>
+                                        @endif
                                         @else
                                         <a href="/admin/gallery/trash/{!!$gal->id!!}"
                                             class="btn btn-danger btn-rounded">

@@ -95,6 +95,7 @@ Route::get('/sliding-door-system', function () {
 
 Route::prefix('product/details')->group(function () {
     Route::get('/{product_name}', 'HomepageControler@productdetails');
+    Route::get('/color/{id}', 'HomepageController@colorproduct');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'isLogin'], function () {

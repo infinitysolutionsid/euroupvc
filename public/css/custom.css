@@ -64,3 +64,26 @@
     min-height: 700px;
     object-fit: cover;
 }
+
+.icon-box.border .icon {
+    border: 3px solid #cb1a21;
+}
+
+.icon-box h5 {
+    color: #cb1a21;
+}
+
+.icon-box .icon img {
+    width: 30px;
+    margin-top: 13px;
+    margin-left: 3px;
+}
+
+.icon-box p {
+    line-height: 20px;
+}
+
+.icon-box.text-center p,
+.icon-box.center p {
+    font-size: 13px;
+}

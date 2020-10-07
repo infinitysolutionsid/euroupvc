@@ -36,9 +36,8 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
             <div class="col-lg-6">
                 <div class="heading-text heading-section text-left">
                     <h2>Warna Bervariasi</h2>
-                    <span class="lead">Kami sadar bahwa client kami sangat mencintai banyak motif dengan itu
-                        kami
-                        memproduksi produk kami dengan banyak variasi warna.</span>
+                    <span class="lead">Untuk mengikuti perkembangan tren di era modern, kami menyediakan pilihan warna
+                        yang bervariasi, sehingga memberi kenyamanan bagi customer.</span>
                 </div>
             </div>
             <div class="col-lg-4 variouspall text-right">
@@ -65,74 +64,108 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
     </div>
 </section>
 
-<section id="section2" class="p-t-100">
+<section class="p-t-150 p-b-100">
     <div class="container">
-        <div class="heading-text heading-section text-center">
-            <h2>Fitur Terbaik UPVC Kami.</h2>
-            <span class="lead">Kamu tidak akan kecewa akan kualitas produk kami.</span>
+        <div class="col-lg-12 m-b-100 center">
+            <div class="heading-text heading-section text-center">
+                <h2>Apa yang menjadi keunggulan kami?</h2>
+                <p>Kami memiliki banyak keunggulan yang terdapat pada produk uPVC kami.</p>
+            </div>
         </div>
-        <div class="row">
-            <section id="fiturss" class="no-padding equalize" data-equalize-item=".text-box">
-                <div class="row col-no-margin">
-                    <div class="col-lg-4">
-                        <div class="text-box hover-effect" style="height: 330px;">
-                            <a href="#"> <i class="fas fa-dumbbell"></i>
-                                <h3>Kekuatan</h3>
-                                <p>Pengelasan sudut dapat menahan tekanan sebesar 400 Newton. Kokoh dan tahan
-                                    lama.</p>
-                            </a>
-                        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><img src="{!!asset('images/kelebihan/profile.png')!!}" alt="Keunggulan Produk Euro uPVC"></a>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="text-box hover-effect" style="height: 330px;">
-                            <a href="#"><span><i class="fas fa-volume-mute"></i></span>
-                                <h3>Noise Cancelling</h3>
-                                <p>Rongga rongga profil merupakan desain baik untuk mengatasi penambatan suara
-                                    dari sisi luar ke sisi dalam. Menggunakan bahan yang lembut dan dapat
-                                    menyerap suara.</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="text-box hover-effect" style="height: 330px;">
-                            <a href="#"> <i class="fas fa-tools"></i>
-                                <h3>Bebas Perawatan</h3>
-                                <p>Bahan uPVC kami tidak memerlukan perawatan untuk seumur hidup.</p>
-                            </a>
-                        </div>
-                    </div>
-                    {{-- Row 2 --}}
-                    <div class="col-lg-4">
-                        <div class="text-box hover-effect" style="height: 330px;">
-                            <a href="#"> <i class="fas fa-leaf"></i>
-                                <h3>Hemat Energi </h3>
-                                <p>Menjamin bahwa bahan kami merupakan bahan yang membuat insulasi terhadap
-                                    panas & suara sehingga hemat energi.</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="text-box hover-effect" style="height: 330px;">
-                            <a href="#"> <i class="fas fa-hand-holding-usd"></i>
-                                <h3>Menghemat Biaya </h3>
-                                <p>Terjamin lebih dari 10 tahun tanpa terjadi korosi & perubahan warna, sehingga
-                                    menghemat biaya renovasi.</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="text-box hover-effect" style="height: 330px;">
-                            <a href="#"> <i class="fas fa-drafting-compass"></i>
-                                <h3>Design Elegant & Flexibel</h3>
-                                <p>Penampilan yang anggun, dan dibuat sesuai dengan desain dan arsitektur yang
-                                    diinginkan.</p>
-                            </a>
-                        </div>
-                    </div>
-
+                    <h5>Profile Kuat</h5>
+                    <p class="lead">Rangka profile yang diperkuat dengan besi galvanis.</p>
                 </div>
-            </section>
-            <!-- end: Boxes -->
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><i class="fas fa-lock"></i></a>
+                    </div>
+                    <h5>Multi Point Locking</h5>
+                    <p class="lead">Sistem penguncian yang rapat dengan <strong>multi point locking</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><img src="{!!asset('images/kelebihan/kuat.png')!!}" alt="Keunggulan Produk Euro uPVC"></a>
+                    </div>
+                    <h5>Kuat, Kokoh, dan Tahan Lama</h5>
+                    <p class="lead">uPVC yang memiliki daya kuat, daya yang kokoh dan tahan lama.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><img src="{!!asset('images/kelebihan/eco.png')!!}" alt="Keunggulan Produk Euro uPVC"></a>
+                    </div>
+                    <h5>Ramah Lingkungan (Eco-Friendly)</h5>
+                    <p class="lead">Produk yang ramah lingkungan yang dapat mengurangi pemakaian kayu untuk jendela &
+                        pintu, dan membuat bumi lebih hijau.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><img src="{!!asset('images/kelebihan/uv.png')!!}" alt="Keunggulan Produk Euro uPVC"></a>
+                    </div>
+                    <h5>UV Protection</h5>
+                    <p class="lead">Mengandung pelindung sinar <i>Ultra Violet</i> (UV)</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><img src="{!!asset('images/kelebihan/cuaca.png')!!}" alt="Keunggulan Produk Euro uPVC"></a>
+                    </div>
+                    <h5>Weather Extreme Protection</h5>
+                    <p class="lead">Tidak akan lapuk / keropos akibat air hujan yang asam / uap air laut.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><i class="fas fa-temperature-high"></i></a>
+                    </div>
+                    <h5>Menjaga stabilitas suhu</h5>
+                    <p class="lead">Menjaga stabilitas suhu dalam ruangan sehingga lebih hemat energi.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><i class="fas fa-bug"></i></a>
+                    </div>
+                    <h5>Anti Rayap</h5>
+                    <p class="lead">Menjaga ketahanan produk dengan bahan anti rayap.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><i class="fas fa-volume-mute"></i></a>
+                    </div>
+                    <h5>Mengurangi kebisingan</h5>
+                    <p class="lead">Memiliki rongga profil yang dapat mengatasi penambatan suara dari sisi luar ke sisi
+                        dalam, dilengkapi dengan bahan yang lembut yang sangat baik untuk meredam suara.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="icon-box text-center effect border color">
+                    <div class="icon">
+                        <a><i class="fas fa-hand-holding-usd"></i></a>
+                    </div>
+                    <h5>Hemat biaya & Minim Perawatan</h5>
+                    <p class="lead">Sudah lebih dari 10 tahun, uPVC kami bebas korosi & perubahan warna, sehingga tidak
+                        memerlukan biaya dan perawatan berulang.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -315,7 +348,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
             @if(!$partner->isEmpty())
             @foreach ($partner as $partner)
             <li>
-                <a href="#"><img src="{!!asset('media/partner/'.$partner->image)!!}"
+                <a><img src="{!!asset('media/partner/'.$partner->image)!!}"
                         alt="{{$partner->title}} &copy;euroupvc.co.id">
                 </a>
             </li>

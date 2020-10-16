@@ -6,7 +6,19 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
 @section('content')
 <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360" data-autoplay="3200" data-animate-in="fadeIn"
     data-animate-out="fadeOut" data-items="1" data-loop="true" data-autoplay="true">
-    <div class="slide" style="background-image:url('homepages/real-estate/images/1.jpg');">
+    <div class="slide" style="background-image:url('homepages/real-estate/images/5.jpg');">
+        <div class="container">
+            <div class="slide-captions">
+
+                <h2 class="text-uppercase text-medium no-margin">Standard Europe<br>uPVC Profil</h2>
+                <p class="lead">Produk yang berkualitas mengikuti<br> kualitas standard eropa. Memiliki <b>keunggulan
+                        yang <br> lebih dari
+                        6</b> menjadikan kami, selalu<br>unggul dalam hal uPVC.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="slide" style="background-image:url('homepages/real-estate/images/4.jpg');">
         <div class="container">
             <div class="slide-captions">
                 <h3 class="text-uppercase text-medium">Perindah rumahmu <br>dengan upvc <br>
@@ -17,7 +29,7 @@ euroupvc.co.id! Pembayaran mudah, pengiriman cepat, desain bisa custom!')
             </div>
         </div>
     </div>
-    <div class="slide" style="background-image:url('homepages/real-estate/images/2.jpg');">
+    <div class="slide" style="background-image:url('homepages/real-estate/images/3.jpg');">
         <div class="container">
             <div class="slide-captions">
 

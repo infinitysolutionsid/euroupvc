@@ -127,7 +127,7 @@ Route::group(['prefix' => 'admin/products', 'middleware' => 'isLogin'], function
 Route::group(['prefix' => 'admin/blog', 'middleware' => 'isLogin'], function () {
     Route::post('/addnewblog', 'DashboardController@prosesaddblog');
     Route::get('/trash/{id}', 'DashboardController@trashblog');
-    Route::post('/update/{id}', 'DashboardController@updateblog');
+    Route::post('/update/{id}', 'DashboardController@updateblog')->name('ubah.blog');
 });
 Route::group(['prefix' => 'admin/gallery', 'middleware' => 'isLogin'], function () {
     Route::post('/addnewgallery', 'DashboardController@prosesaddgallery');
